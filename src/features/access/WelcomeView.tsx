@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import type { ReactElement } from 'react'
 import styles from './WelcomeView.module.css'
 
@@ -9,9 +10,11 @@ const WelcomeView = (): ReactElement => (
         Bienvenida, Isabela
       </h1>
       <p className={styles.message}>
-        Tu diciembre empieza aquí. Pronto, cada día tendrá algo especialmente
-        para ti.
+        Tu diciembre empieza aquí. Pronto, cada día tendrá algo especialmente para ti.
       </p>
+      <Link className={styles.calendarLink} to="/calendar">
+        Abrir mi calendario
+      </Link>
       <div className={styles.accent} aria-hidden="true" />
     </section>
   </main>

@@ -324,6 +324,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T6 a T8 de la Spec 003.
 
+## 2026-11-26 — T6 (parcial): guarda de acceso y enlace al calendario
+
+**Contexto:** el calendario no podía quedar accesible sin pasar por el código, y la bienvenida no ofrecía forma de entrar.
+
+**Decisión:** `RequireAccess` envuelve las vistas protegidas y redirige con `<Navigate to="/" replace />`. La bienvenida añade un enlace «Abrir mi calendario»; no navega automáticamente para conservar el comportamiento de la Spec 001.
+
+**Implementación:** `app/providers/RequireAccess.tsx`, ruta `/calendar` protegida y enlace con estilo en `WelcomeView.module.css`. La ruta `/surprise/:dayId` se protegerá en T7, al crearla; por eso T6 queda marcado como avance y no como tarea cerrada.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En Chrome DevTools, `/calendar` sin acceso redirige a `/`; con `2026` aparece la bienvenida; al simular 5/12/2026 con un `Date` de prueba y pulsar el enlace, el calendario muestra 5 días disponibles y 26 bloqueados.
+
+**Pendiente:** cerrar T6 con la guarda de la ruta de sorpresa en T7; después T8.
+
 ## Plantilla para próximas entradas
 
 ```markdown

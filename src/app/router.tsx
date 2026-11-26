@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router'
 import AccessRoute from '../features/access/AccessRoute'
 import NotFoundView from '../features/access/components/NotFoundView'
 import CalendarView from '../features/calendar/CalendarView.tsx'
+import RequireAccess from './providers/RequireAccess.tsx'
 
 export const router = createBrowserRouter([
   {
@@ -10,7 +11,11 @@ export const router = createBrowserRouter([
   },
   {
     path: '/calendar',
-    element: <CalendarView />,
+    element: (
+      <RequireAccess>
+        <CalendarView />
+      </RequireAccess>
+    ),
   },
   {
     path: '*',

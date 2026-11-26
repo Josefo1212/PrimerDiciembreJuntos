@@ -22,6 +22,7 @@
 
 - [ ] **T6. Añadir rutas protegidas y el enlace desde la bienvenida.** RF-9, RF-10.
   - Hecho cuando: `/calendar` y `/surprise/:dayId` están tras `RequireAccess`; sin acceso redirigen a `/`; con acceso válido la bienvenida ofrece «Abrir mi calendario» sin navegar automáticamente; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Avance:** `RequireAccess` creado y aplicado a `/calendar`; la bienvenida ya ofrece el enlace. Sin acceso, `/calendar` redirige a `/`. Con fecha simulada 5/12 y código válido, el enlace lleva al calendario y muestra 5 días disponibles y 26 bloqueados. La ruta de sorpresa se protege en T7, cuando se crea.
 
 - [ ] **T7. Crear la vista provisional de sorpresa y registrar la visita.** RF-5, RF-6, RF-7, RF-8.
   - Hecho cuando: un día desbloqueado muestra contenido provisional e incrementa el progreso; reabrirlo conserva `firstVisit`; un día futuro redirige a `/calendar` sin registrar visita; un identificador inválido muestra la no encontrada; `pnpm lint` y `pnpm build` terminan correctamente.

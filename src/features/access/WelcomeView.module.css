@@ -52,6 +52,43 @@
   line-height: 1.7;
 }
 
+.calendarLink {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-top: 1.75rem;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  background: var(--dusty-violet);
+  color: var(--surface);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.calendarLink:hover {
+  background: var(--deep-plum);
+}
+
+.calendarLink:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(128, 99, 158, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendarLink {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .calendarLink:focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 3px;
+    box-shadow: none;
+  }
+}
+
 .accent {
   position: absolute;
   right: -4rem;
