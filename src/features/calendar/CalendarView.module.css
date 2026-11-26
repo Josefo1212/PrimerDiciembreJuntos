@@ -1,15 +1,35 @@
 .page {
+  position: relative;
   min-height: 100svh;
   display: grid;
   place-items: start center;
+  overflow: hidden;
   padding: clamp(1.5rem, 5vw, 3rem);
   background:
-    radial-gradient(circle at 15% 10%, rgba(233, 202, 219, 0.45), transparent 42%),
-    radial-gradient(circle at 85% 90%, rgba(234, 224, 245, 0.6), transparent 45%),
-    var(--lavender-mist);
+    radial-gradient(circle at 15% 10%, rgba(169, 139, 203, 0.28), transparent 42%),
+    radial-gradient(circle at 85% 90%, rgba(233, 202, 219, 0.16), transparent 46%),
+    linear-gradient(155deg, var(--night) 0%, var(--night-soft) 54%, #1a1325 100%);
+  color: var(--warm-ivory);
+  animation: calendarIn 520ms ease-out both;
+}
+
+.page::before {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: min(80vw, 40rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(169, 139, 203, 0.18), transparent 66%);
+  filter: blur(24px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  content: '';
 }
 
 .content {
+  position: relative;
+  z-index: 1;
   width: min(100%, 60rem);
 }
 
@@ -20,7 +40,7 @@
 
 .eyebrow {
   margin: 0 0 0.75rem;
-  color: var(--dusty-violet);
+  color: var(--gold-light);
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -28,25 +48,28 @@
 
 .title {
   margin: 0;
-  color: var(--deep-plum);
+  color: var(--warm-ivory);
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 8vw, 3.2rem);
   font-weight: 400;
+  text-shadow: 0 0 36px rgba(205, 181, 232, 0.2);
 }
 
 .progress {
   margin: 0.75rem 0 0;
-  color: var(--dusty-violet);
+  color: rgba(246, 238, 223, 0.75);
   font-size: 0.95rem;
 }
 
 .storageWarning {
   margin: 0 0 1.5rem;
   padding: 0.9rem 1rem;
-  border-left: 3px solid var(--dusty-violet);
+  border: 1px solid rgba(205, 181, 232, 0.3);
+  border-left: 3px solid var(--gold);
   border-radius: 12px;
-  background: var(--warm-ivory);
-  color: var(--deep-plum);
+  background: rgba(46, 34, 64, 0.72);
+  backdrop-filter: blur(14px);
+  color: var(--warm-ivory);
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -55,22 +78,74 @@
   display: inline-block;
   margin-top: 2rem;
   padding: 0.7rem 1.25rem;
+  border: 1px solid rgba(201, 164, 92, 0.55);
   border-radius: 999px;
-  color: var(--dusty-violet);
+  background: rgba(31, 23, 43, 0.55);
+  color: var(--gold-light);
   font-weight: 600;
   text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .backLink:hover {
-  background: var(--soft-lilac);
+  border-color: var(--gold-light);
+  background: rgba(201, 164, 92, 0.14);
+  transform: translateY(-1px);
 }
 
 .backLink:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(128, 99, 158, 0.22);
+  box-shadow: 0 0 0 4px rgba(228, 199, 131, 0.38);
+}
+
+@keyframes calendarIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    animation: none;
+  }
+
+  .backLink {
+    transition: none;
+  }
+
+  .backLink:hover {
+    transform: none;
+  }
 }
 
 @media (forced-colors: active) {
+  .page {
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .page::before {
+    display: none;
+  }
+
+  .eyebrow,
+  .title,
+  .progress,
+  .storageWarning {
+    color: CanvasText;
+  }
+
+  .storageWarning {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    backdrop-filter: none;
+  }
+
+  .backLink {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+
   .backLink:focus-visible {
     outline: 2px solid CanvasText;
     outline-offset: 3px;

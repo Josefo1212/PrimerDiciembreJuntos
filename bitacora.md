@@ -574,6 +574,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente general:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo; validación visual de la Spec 007.
 
+## 2026-11-26 — Spec 008 aprobada y T1: calendario nocturno
+
+**Contexto:** el usuario pidió que el calendario usara la misma gama de colores de la portada. Confirmó fondo nocturno completo y conservar el sistema actual de estados con nuevos colores.
+
+**Decisión:** Spec 008 aprobada. Reutilizar los tokens nocturnos ya existentes, sin cambiar reglas de fecha, persistencia ni rutas.
+
+**Implementación:** `CalendarView.module.css` adopta el fondo degradado plum/lila, halo, texto Warm Ivory, eyebrow dorado, advertencia glass y enlace de retorno dorado, con reglas de movimiento reducido y `forced-colors`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos.
+
+**Pendiente:** T2 a T4 de la Spec 008.
+
 ## Plantilla para próximas entradas
 
 ```markdown
