@@ -360,6 +360,16 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo y despliegue en Vercel. La verificación en Vercel sigue sin ejecutarse.
 
+## 2026-11-26 — Salida de build configurada para Vercel
+
+**Contexto:** el deploy en Vercel fallaba con «No Output Directory named "build" found after the Build completed». El build local de Vite genera `dist/`, no `build/`.
+
+**Decisión:** fijar `outputDirectory: "dist"` en `vercel.json`, manteniendo el rewrite que permite las rutas reales del router. No se cambia `vite.config.ts` ni se fuerza una carpeta `build/` artificial.
+
+**Implementación:** `vercel.json` añade `"outputDirectory": "dist"`.
+
+**Validación:** `vercel.json` analizado correctamente con Node; `pnpm lint` y `pnpm build` correctos. El build generó `dist/index.html` y `dist/assets/...`. Queda pendiente comprobar el deploy remoto y revisar en Vercel que el Framework Preset sea Vite y la raíz del proyecto apunte a la carpeta con `package.json`.
+
 ## Plantilla para próximas entradas
 
 ```markdown
