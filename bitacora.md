@@ -212,6 +212,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T4 a T6 de la Spec 002.
 
+## 2026-11-26 — T4: router real con React Router 8
+
+**Contexto:** la aplicación necesita URLs reales antes de añadir el calendario.
+
+**Decisiones:** las únicas rutas son `/` y `*`. `createBrowserRouter` se importa desde `react-router` y `RouterProvider` desde `react-router/dom`, según la API de v8. No se crean rutas de vistas no aprobadas.
+
+**Implementación:** `app/router.tsx`, `features/access/components/NotFoundView.tsx` y su módulo CSS; `App.tsx` monta `AccessProvider` fuera de `RouterProvider`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En Chrome DevTools, `/` muestra acceso y `/no-existe` muestra «Esta página no existe» con enlace «Volver al inicio», que navega de vuelta a `/`.
+
+**Pendiente:** T5 y T6 de la Spec 002.
+
 ## Plantilla para próximas entradas
 
 ```markdown

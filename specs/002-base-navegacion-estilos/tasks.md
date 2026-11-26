@@ -12,8 +12,9 @@
   - Hecho cuando: `App.tsx` ya no posee el `useState` de acceso; el provider inicializa en `'locked'`; `useAccess` falla explícitamente fuera del provider; el comportamiento de la Spec 001 sigue intacto.
   - **Resultado:** `AccessContext`, `AccessProvider`, `useAccess` y `AccessRoute`; `AccessForm` obtiene `unlock` del hook, sin prop drilling. Comprobado en navegador: error, bienvenida y recarga al acceso.
 
-- [ ] **T4. Crear `app/router.tsx` con `createBrowserRouter` y montar `RouterProvider`.** RF-1, RF-5, RF-6.
+- [x] **T4. Crear `app/router.tsx` con `createBrowserRouter` y montar `RouterProvider`.** RF-1, RF-5, RF-6.
   - Hecho cuando: existen las rutas `/` y `*`; `NotFoundView` es accesible; no hay rutas de vistas no aprobadas; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Resultado:** v8 importa `createBrowserRouter` desde `react-router` y `RouterProvider` desde `react-router/dom`. En navegador, `/no-existe` muestra la vista de no encontrada y el enlace devuelve a `/`.
 
 - [ ] **T5. Añadir `vercel.json` con el rewrite SPA.** RF-10.
   - Hecho cuando: el archivo contiene `{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}` y es JSON válido.

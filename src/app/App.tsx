@@ -1,10 +1,11 @@
 import type { ReactElement } from 'react'
-import AccessRoute from '../features/access/AccessRoute'
+import { RouterProvider } from 'react-router/dom'
 import AccessProvider from './providers/AccessProvider'
+import { router } from './router'
 
 const App = (): ReactElement => (
   <AccessProvider>
-    <AccessRoute />
+    <RouterProvider router={router} />
   </AccessProvider>
 )
 
