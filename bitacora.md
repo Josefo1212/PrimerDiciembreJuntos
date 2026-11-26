@@ -140,6 +140,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** validación manual en navegador de teclado/foco, móvil/escritorio, `prefers-reduced-motion` y pestaña Network; sustituir `2026` por el código definitivo; aprobar CSS Modules y React Router si se llegan a necesitar.
 
+## 2026-11-26 — Foco visible del formulario mejorado
+
+**Contexto:** el usuario revisó la vista en Chrome DevTools y no le gustó el foco del input: era el contorno gris/morado genérico del navegador.
+
+**Decisiones:** el foco se diseña con un halo lila suave de 4px y borde violeta, en lugar del `outline` por defecto. El botón recibe el mismo tratamiento. Se documenta en `CONVENTIONS.md` que, si se suprime `outline`, debe existir fallback para `forced-colors`.
+
+**Implementación:** `src/features/access/components/AccessForm.css` incorpora `--focus-ring`, transición de `box-shadow`, `:focus-visible` para input y botón, y un bloque `@media (forced-colors: active)` con contorno de 2px.
+
+**Validación:** comprobado en Chrome DevTools con estilos computados: halo `rgba(128, 99, 158, 0.22) 0 0 0 4px` en input y botón, `outline: none`, `Tab` y `Shift+Tab` recorren campo y botón, y en colores forzados aparece `outline: 2px solid CanvasText`. `pnpm lint` y `pnpm build` correctos.
+
+**Pendiente:** nada de esta tarea. Sigue pendiente sustituir el código temporal `2026`.
+
 ## Plantilla para próximas entradas
 
 ```markdown

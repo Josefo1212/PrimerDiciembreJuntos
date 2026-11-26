@@ -31,3 +31,7 @@
 
 - [x] **T10. Revalidar reglas puras, lint y build después del refactor.** T9; RF-2, RF-3, RF-8, RF-9, RF-12.
   - Hecho cuando: los seis casos de reglas puras pasan desde la nueva ruta `rules/accessRules.ts`, y `pnpm lint` y `pnpm build` terminan correctamente tras el cambio de estructura.
+
+- [x] **T11. Mejorar el foco visible del campo y del botón.** Requisitos no funcionales de accesibilidad y paleta.
+  - Hecho cuando: el foco ya no es el contorno genérico; input y botón muestran un halo lila suave con borde violeta en `:focus-visible`; `Shift+Tab` vuelve al campo; `@media (forced-colors: active)` restaura un contorno de 2px; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Validado en Chrome DevTools:** estilos computados del halo (`rgba(128, 99, 158, 0.22) 0 0 0 4px`) en input y botón; `Tab`, `Shift+Tab` y colores forzados comprobados.

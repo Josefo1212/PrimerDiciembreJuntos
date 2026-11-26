@@ -71,6 +71,7 @@ src/
 - Cada componente tiene su archivo CSS junto a él.
 - Mobile-first, con media queries para crecer.
 - `prefers-reduced-motion` reduce o elimina animaciones no esenciales.
+- El foco visible se diseña, no se hereda del navegador: halo suave con un token de la paleta y suficiente contraste. Si se suprime `outline`, se incluye un fallback con `@media (forced-colors: active)`.
 - Liquid Glass moderado: blur y transparencias solo en superficies flotantes o destacadas.
 
 ## Validación y commits
