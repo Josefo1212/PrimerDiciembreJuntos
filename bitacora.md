@@ -442,6 +442,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T3 a T5 de la Spec 005.
 
+## 2026-11-26 — T3: portada de acceso
+
+**Contexto:** la pantalla inicial era una tarjeta centrada sin jerarquía emocional. Había que convertirla en portada sin alterar el acceso.
+
+**Decisión:** composición editorial con texto a la izquierda y panel glass con el sobre cerrado y el formulario a la derecha en escritorio; apilada en móvil. El motivo se integra en el panel, no compite con el campo.
+
+**Implementación:** `AccessView.tsx` y su CSS Module reescritos; `AccessForm.module.css` ajusta el botón a todo el ancho y refuerza su sombra. La lógica del formulario y el código `2026` permanecen intactos.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En Chrome DevTools, 390×844 sin desbordamiento y panel de 350 px; 1280×800 con columnas de 598 px y 432 px. Error con `role="alert"` y `aria-invalid="true"` al usar código incorrecto; acceso correcto con `2026`. Solo se cargan fuentes locales.
+
+**Pendiente:** T4 y T5 de la Spec 005.
+
 ## Plantilla para próximas entradas
 
 ```markdown
