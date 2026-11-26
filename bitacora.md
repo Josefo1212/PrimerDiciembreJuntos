@@ -550,6 +550,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T3 y T4 de la Spec 007.
 
+## 2026-11-26 — T3: movimiento elegante y contenido
+
+**Contexto:** el usuario pidió animación elegante y contenida, no cinematográfica ni llamativa.
+
+**Decisión:** conservar la coreografía de entrada y los ciclos ambientales, pero reducir amplitudes, opacidades y velocidades. No añadir parallax ni barridos.
+
+**Implementación:** `CoverScene.module.css` suaviza `rise`, `panelIn`, `twinkle` y `breathe`; `MoonMotif.module.css` suaviza `moonGlow`, `moonFloat`, `orbitSpin` y `sparkleTwinkle`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. Movimiento reducido y `forced-colors` siguen cubiertos por reglas explícitas.
+
+**Pendiente:** T4 de validación y cierre de la Spec 007.
+
 ## Plantilla para próximas entradas
 
 ```markdown

@@ -8,8 +8,9 @@
   - Hecho cuando: `CoverScene` usa `phase` y las vistas muestran luna creciente en acceso y llena en bienvenida, sin textos de sobre/carta/lacre; `pnpm lint` y `pnpm build` terminan correctamente.
   - **Resultado:** `CoverScene` cambia `variant` por `phase` y renderiza `MoonMotif`. Acceso usa luna creciente con «La noche te espera» y «Descubre tu diciembre»; bienvenida usa luna llena con «La luna está contigo» y la nota «Esta noche es tuya.». `grep` no encuentra sobre/carta/lacre/flap/seal en `src`. Ambas tareas se entregan juntas porque el contrato de `CoverScene` y las vistas debían cambiar a la vez para que el build siga siendo válido. `pnpm lint` y `pnpm build` correctos.
 
-- [ ] **T3. Suavizar el movimiento.** RF-4, RF-6.
+- [x] **T3. Suavizar el movimiento.** RF-4, RF-6.
   - Hecho cuando: solo quedan animaciones suaves de entrada, estrellas, halo, luna y órbita; movimiento reducido y `forced-colors` siguen cubiertos; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Resultado:** las entradas bajan a 560–640 ms con desplazamientos de 12–16 px y escalado casi imperceptible. El parpadeo de estrellas y destellos pasa a rangos de opacidad 0.35–0.85 y 0.4–0.9 con escalado 0.9–1.1; halo, luna y órbita usan ciclos de 12–32 s. Se conservan `prefers-reduced-motion` y `forced-colors`. `pnpm lint` y `pnpm build` correctos.
 
 - [ ] **T4. Validar y cerrar la spec.** RF-1 a RF-7.
   - Hecho cuando: se verifica que no hay rastro del sobre en `src` ni `dist`, se revisa el bundle, se actualiza documentación y se registra con honestidad la validación visual pendiente.
