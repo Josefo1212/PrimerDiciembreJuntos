@@ -264,6 +264,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** escribir `spec.md`, `plan.md` y `tasks.md` de la Spec 003 y obtener aprobación antes de implementar.
 
+## 2026-11-26 — T1: Dexie instalado
+
+**Contexto:** la Spec 003 necesita la dependencia aprobada para persistir visitas.
+
+**Decisión:** se instala la versión que pnpm resuelve, `dexie@4.4.7`, sin fijar una versión anterior.
+
+**Implementación:** `package.json` y `pnpm-lock.yaml` actualizados; sin código nuevo.
+
+**Validación:** `pnpm build` terminó correctamente.
+
+**Pendiente:** T2 a T8 de la Spec 003.
+
 ## Plantilla para próximas entradas
 
 ```markdown

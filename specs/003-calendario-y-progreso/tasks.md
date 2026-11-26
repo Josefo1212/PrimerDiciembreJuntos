@@ -1,7 +1,8 @@
 # Tareas 003 — Calendario, fechas y progreso local
 
-- [ ] **T1. Instalar `dexie` y verificar el lockfile.** RF-12.
+- [x] **T1. Instalar `dexie` y verificar el lockfile.** RF-12.
   - Hecho cuando: `package.json` declara `dexie`, `pnpm-lock.yaml` está actualizado y `pnpm build` termina correctamente.
+  - **Resultado:** `dexie@4.4.7` instalado; build correcto. Sin cambios de código todavía.
 
 - [ ] **T2. Implementar y comprobar las reglas puras de fecha y estado.** RF-1, RF-2, RF-3, RF-4.
   - Hecho cuando: `dateRules.ts` expone `isValidDayId`, `isDayUnlocked` y `getDayStatus` sin React ni DOM; el script de casos con Node comprueba 30/11, 1/12, 5/12, 31/12, 1/1/2027, identificadores inválidos y día visitado; `pnpm lint` y `pnpm build` terminan correctamente.
