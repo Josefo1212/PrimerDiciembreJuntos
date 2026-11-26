@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router'
 import { useEffect, useRef, type ReactElement } from 'react'
 import NotFoundView from '../access/components/NotFoundView.tsx'
 import { useProgress } from '../../shared/progress/hooks/useProgress.ts'
+import { getUnlockDate } from '../../shared/time/unlockDate.ts'
 import { isDayUnlocked, parseDayId } from '../calendar/rules/dateRules.ts'
 import styles from './SurpriseView.module.css'
 
@@ -10,7 +11,7 @@ const SurpriseView = (): ReactElement => {
   const { markVisited } = useProgress()
   const registeredDay = useRef<number | null>(null)
   const parsedDayId = parseDayId(dayId)
-  const unlocked = parsedDayId !== null && isDayUnlocked(parsedDayId, new Date())
+  const unlocked = parsedDayId !== null && isDayUnlocked(parsedDayId, getUnlockDate())
 
   useEffect(() => {
     if (parsedDayId === null || !unlocked || registeredDay.current === parsedDayId) {

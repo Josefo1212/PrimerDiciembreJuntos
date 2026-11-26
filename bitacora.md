@@ -382,6 +382,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T2 a T4 de la Spec 004.
 
+## 2026-11-26 — T2: fecha de desbloqueo centralizada
+
+**Contexto:** hacía falta un único punto donde decidir si el desbloqueo usa fecha real o fecha de prueba.
+
+**Decisión:** `getUnlockDate()` aplica la fecha de prueba solo cuando `import.meta.env.DEV` es verdadero. `ProgressProvider` no lo usa: las visitas siguen registrando la fecha real para no contaminar el progreso.
+
+**Implementación:** `src/shared/time/unlockDate.ts`; `CalendarView` y `SurpriseView` sustituyen `new Date()` por `getUnlockDate()`. Comentario añadido en `ProgressProvider`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. El build generó 133 módulos y no aparece `previewDate` ni `getPreviewDate` en `dist`. La comprobación funcional en navegador se completa con el panel en T3.
+
+**Pendiente:** T3 y T4 de la Spec 004.
+
 ## Plantilla para próximas entradas
 
 ```markdown

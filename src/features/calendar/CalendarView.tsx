@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import type { ReactElement } from 'react'
 import { useProgress } from '../../shared/progress/hooks/useProgress.ts'
+import { getUnlockDate } from '../../shared/time/unlockDate.ts'
 import CalendarGrid, { type CalendarDay } from './components/CalendarGrid.tsx'
 import { getDayStatus } from './rules/dateRules.ts'
 import { TOTAL_DAYS } from './types.ts'
@@ -8,7 +9,7 @@ import styles from './CalendarView.module.css'
 
 const CalendarView = (): ReactElement => {
   const { visitedDayIds, storageStatus } = useProgress()
-  const now = new Date()
+  const now = getUnlockDate()
 
   const days: CalendarDay[] = Array.from({ length: TOTAL_DAYS }, (_, index) => {
     const dayId = index + 1

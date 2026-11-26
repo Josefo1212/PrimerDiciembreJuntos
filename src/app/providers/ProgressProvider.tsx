@@ -40,6 +40,7 @@ const ProgressProvider = ({ children }: ProgressProviderProps): ReactElement => 
     setVisitedDayIds((currentDayIds) => new Set(currentDayIds).add(dayId))
 
     try {
+      // Las visitas usan la fecha real: la fecha de prueba solo afecta al desbloqueo.
       await registerDayVisit(dayId, new Date())
     } catch {
       setStorageStatus('unavailable')
