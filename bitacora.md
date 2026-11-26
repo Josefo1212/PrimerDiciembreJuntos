@@ -224,6 +224,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T5 y T6 de la Spec 002.
 
+## 2026-11-26 — T5: rewrite SPA en Vercel
+
+**Contexto:** sin rewrite, una visita directa a una ruta del router devolvería 404 en Vercel.
+
+**Decisión:** `vercel.json` reescribe `/(.*)` a `/index.html` y deja que el router decida qué vista mostrar. La documentación de Vercel confirma este patrón para SPAs.
+
+**Implementación:** archivo `vercel.json` nuevo con `$schema` y la regla de rewrite.
+
+**Validación:** JSON parseado con Node y regla comprobada. No se ha desplegado todavía; el comportamiento en Vercel queda por verificar en el despliegue final.
+
+**Pendiente:** T6 de la Spec 002.
+
 ## Plantilla para próximas entradas
 
 ```markdown

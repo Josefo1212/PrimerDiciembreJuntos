@@ -16,8 +16,9 @@
   - Hecho cuando: existen las rutas `/` y `*`; `NotFoundView` es accesible; no hay rutas de vistas no aprobadas; `pnpm lint` y `pnpm build` terminan correctamente.
   - **Resultado:** v8 importa `createBrowserRouter` desde `react-router` y `RouterProvider` desde `react-router/dom`. En navegador, `/no-existe` muestra la vista de no encontrada y el enlace devuelve a `/`.
 
-- [ ] **T5. Añadir `vercel.json` con el rewrite SPA.** RF-10.
+- [x] **T5. Añadir `vercel.json` con el rewrite SPA.** RF-10.
   - Hecho cuando: el archivo contiene `{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}` y es JSON válido.
+  - **Resultado:** validado con Node; incluye `$schema` de Vercel.
 
 - [ ] **T6. Validar el conjunto con lint, build y Chrome DevTools.** Criterios de aceptación completos.
   - Hecho cuando: se comprueban acceso, bienvenida, recarga, error, teclado y foco, ruta no encontrada, clases con scope local y ausencia de peticiones de red; `pnpm lint` y `pnpm build` terminan correctamente.
