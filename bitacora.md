@@ -200,6 +200,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T3 a T6 de la Spec 002.
 
+## 2026-11-26 — T3: estado de acceso en Context
+
+**Contexto:** `App.tsx` todavía guardaba el estado de acceso con `useState` y lo pasaba por props hasta el formulario.
+
+**Decisiones:** el estado vive en `AccessProvider` (`app/providers/`), se consume con `useAccess` (`features/access/hooks/`) y una ruta `AccessRoute` elige entre acceso y bienvenida. `useAccess` lanza un error explícito si se usa fuera del provider.
+
+**Implementación:** archivos nuevos `context.ts`, `hooks/useAccess.ts`, `providers/AccessProvider.tsx` y `AccessRoute.tsx`. `AccessForm` ya no recibe `onSuccess`; obtiene `unlock` del hook. `App.tsx` solo compone provider y ruta.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En Chrome DevTools: `1234` muestra el error, `2026` muestra la bienvenida y la recarga vuelve al acceso.
+
+**Pendiente:** T4 a T6 de la Spec 002.
+
 ## Plantilla para próximas entradas
 
 ```markdown

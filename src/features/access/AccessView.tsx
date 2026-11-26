@@ -2,11 +2,7 @@ import type { ReactElement } from 'react'
 import AccessForm from './components/AccessForm'
 import styles from './AccessView.module.css'
 
-type AccessViewProps = {
-  onSuccess: () => void
-}
-
-const AccessView = ({ onSuccess }: AccessViewProps): ReactElement => (
+const AccessView = (): ReactElement => (
   <main className={styles.page}>
     <section className={styles.card} aria-labelledby="access-title">
       <p className={styles.eyebrow}>Diciembre de 2026</p>
@@ -16,7 +12,7 @@ const AccessView = ({ onSuccess }: AccessViewProps): ReactElement => (
       <p className={styles.description}>
         Antes de abrir tus días, escribe el código que te espera.
       </p>
-      <AccessForm onSuccess={onSuccess} />
+      <AccessForm />
     </section>
   </main>
 )

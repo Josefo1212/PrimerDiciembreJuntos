@@ -1,13 +1,11 @@
 import type { ReactElement } from 'react'
+import { useAccess } from '../hooks/useAccess'
 import { useAccessForm } from '../hooks/useAccessForm'
 import styles from './AccessForm.module.css'
 
-type AccessFormProps = {
-  onSuccess: () => void
-}
-
-const AccessForm = ({ onSuccess }: AccessFormProps): ReactElement => {
-  const { code, error, handleCodeChange, handleSubmit } = useAccessForm({ onSuccess })
+const AccessForm = (): ReactElement => {
+  const { unlock } = useAccess()
+  const { code, error, handleCodeChange, handleSubmit } = useAccessForm({ onSuccess: unlock })
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>

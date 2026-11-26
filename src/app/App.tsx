@@ -1,18 +1,11 @@
-import { useState, type ReactElement } from 'react'
-import AccessView from '../features/access/AccessView'
-import WelcomeView from '../features/access/WelcomeView'
-import type { AccessState } from '../features/access/types'
+import type { ReactElement } from 'react'
+import AccessRoute from '../features/access/AccessRoute'
+import AccessProvider from './providers/AccessProvider'
 
-const App = (): ReactElement => {
-  const [accessState, setAccessState] = useState<AccessState>('locked')
-
-  const handleSuccess = (): void => setAccessState('unlocked')
-
-  if (accessState === 'unlocked') {
-    return <WelcomeView />
-  }
-
-  return <AccessView onSuccess={handleSuccess} />
-}
+const App = (): ReactElement => (
+  <AccessProvider>
+    <AccessRoute />
+  </AccessProvider>
+)
 
 export default App

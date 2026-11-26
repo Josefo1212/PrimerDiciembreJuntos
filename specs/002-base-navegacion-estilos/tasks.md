@@ -8,8 +8,9 @@
   - Hecho cuando: `AccessView.css`, `WelcomeView.css` y `AccessForm.css` pasan a `*.module.css`; los componentes consumen `styles.nombreClase`; no quedan selectores globales nuevos; `pnpm lint` y `pnpm build` terminan correctamente.
   - **Resultado:** clases simples en camelCase; Chrome DevTools muestra names con hash (`_page_2d4hd_1`, `_input_1kadn_16`); el halo de foco sigue aplicado.
 
-- [ ] **T3. Extraer el estado de acceso a `AccessProvider` y `useAccess`.** RF-2, RF-3, RF-4, RF-7.
+- [x] **T3. Extraer el estado de acceso a `AccessProvider` y `useAccess`.** RF-2, RF-3, RF-4, RF-7.
   - Hecho cuando: `App.tsx` ya no posee el `useState` de acceso; el provider inicializa en `'locked'`; `useAccess` falla explícitamente fuera del provider; el comportamiento de la Spec 001 sigue intacto.
+  - **Resultado:** `AccessContext`, `AccessProvider`, `useAccess` y `AccessRoute`; `AccessForm` obtiene `unlock` del hook, sin prop drilling. Comprobado en navegador: error, bienvenida y recarga al acceso.
 
 - [ ] **T4. Crear `app/router.tsx` con `createBrowserRouter` y montar `RouterProvider`.** RF-1, RF-5, RF-6.
   - Hecho cuando: existen las rutas `/` y `*`; `NotFoundView` es accesible; no hay rutas de vistas no aprobadas; `pnpm lint` y `pnpm build` terminan correctamente.
