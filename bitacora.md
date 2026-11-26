@@ -430,6 +430,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T2 a T5 de la Spec 005.
 
+## 2026-11-26 — T2: motivo del sobre
+
+**Contexto:** acceso y bienvenida necesitaban un elemento visual compartido que comunicara continuidad sin aportar información accesible.
+
+**Decisión:** un único componente decorativo con variantes cerrada y abierta, construido con CSS y sin librerías de animación.
+
+**Implementación:** `CoverMotif.tsx` y `CoverMotif.module.css`. Incluye halo, destellos, solapa, carta, pliegues y sello. El contenido es `aria-hidden`, no recibe foco y tiene reglas para movimiento reducido y `forced-colors`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. La revisión visual se hará al integrarlo en las dos pantallas.
+
+**Pendiente:** T3 a T5 de la Spec 005.
+
 ## Plantilla para próximas entradas
 
 ```markdown
