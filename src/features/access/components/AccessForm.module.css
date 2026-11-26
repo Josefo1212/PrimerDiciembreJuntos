@@ -1,4 +1,4 @@
-.accessForm {
+.form {
   --focus-ring: rgba(128, 99, 158, 0.22);
 
   display: flex;
@@ -7,13 +7,13 @@
   text-align: left;
 }
 
-.accessForm__label {
+.label {
   color: var(--deep-plum);
   font-size: 0.9rem;
   font-weight: 600;
 }
 
-.accessForm__input {
+.input {
   width: 100%;
   padding: 0.95rem 1rem;
   border: 1px solid var(--pastel-lilac);
@@ -26,11 +26,11 @@
   transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
 
-.accessForm__input:hover {
+.input:hover {
   border-color: var(--lavender);
 }
 
-.accessForm__input:focus-visible {
+.input:focus-visible {
   outline: none;
   border-color: var(--dusty-violet);
   background: var(--surface);
@@ -39,12 +39,12 @@
     0 10px 22px rgba(81, 64, 100, 0.1);
 }
 
-.accessForm__input[aria-invalid='true'] {
+.input[aria-invalid='true'] {
   border-color: var(--dusty-violet);
   background: var(--warm-ivory);
 }
 
-.accessForm__error {
+.error {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -57,7 +57,7 @@
   font-size: 0.92rem;
 }
 
-.accessForm__errorMark {
+.errorMark {
   width: 0.55rem;
   height: 0.55rem;
   flex: none;
@@ -65,7 +65,7 @@
   border-radius: 50%;
 }
 
-.accessForm__button {
+.button {
   margin-top: 0.5rem;
   padding: 0.9rem 1.5rem;
   border: none;
@@ -77,22 +77,22 @@
   transition: background-color 160ms ease, transform 160ms ease;
 }
 
-.accessForm__button:hover {
+.button:hover {
   background: var(--deep-plum);
 }
 
-.accessForm__button:active {
+.button:active {
   transform: translateY(1px);
 }
 
-.accessForm__button:focus-visible {
+.button:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px var(--focus-ring);
 }
 
 @media (forced-colors: active) {
-  .accessForm__input:focus-visible,
-  .accessForm__button:focus-visible {
+  .input:focus-visible,
+  .button:focus-visible {
     outline: 2px solid CanvasText;
     outline-offset: 3px;
     box-shadow: none;

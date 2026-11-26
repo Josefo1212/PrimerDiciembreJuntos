@@ -188,6 +188,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T2 a T6 de la Spec 002.
 
+## 2026-11-26 — T2: CSS Modules en el acceso
+
+**Contexto:** la Spec 002 exige estilos con scope local antes de crear más componentes.
+
+**Decisiones:** los tres CSS del feature se renombran a `*.module.css`, las clases pasan a nombres simples en camelCase y se consumen con el objeto `styles`. `index.css` y `tokens.css` siguen siendo los únicos globales.
+
+**Implementación:** `AccessView.module.css`, `WelcomeView.module.css` y `AccessForm.module.css`; sus TSX actualizados; se eliminaron los tres archivos CSS antiguos. Sin cambios de comportamiento.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En Chrome DevTools se observan clases con hash y el input enfocado conserva el halo `rgba(128, 99, 158, 0.22) 0 0 0 4px`.
+
+**Pendiente:** T3 a T6 de la Spec 002.
+
 ## Plantilla para próximas entradas
 
 ```markdown

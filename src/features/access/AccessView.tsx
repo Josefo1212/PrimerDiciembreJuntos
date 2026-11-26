@@ -1,19 +1,19 @@
 import type { ReactElement } from 'react'
 import AccessForm from './components/AccessForm'
-import './AccessView.css'
+import styles from './AccessView.module.css'
 
 type AccessViewProps = {
   onSuccess: () => void
 }
 
 const AccessView = ({ onSuccess }: AccessViewProps): ReactElement => (
-  <main className="access">
-    <section className="access__card" aria-labelledby="access-title">
-      <p className="access__eyebrow">Diciembre de 2026</p>
-      <h1 className="access__title" id="access-title">
+  <main className={styles.page}>
+    <section className={styles.card} aria-labelledby="access-title">
+      <p className={styles.eyebrow}>Diciembre de 2026</p>
+      <h1 className={styles.title} id="access-title">
         Primer Diciembre juntos
       </h1>
-      <p className="access__description">
+      <p className={styles.description}>
         Antes de abrir tus días, escribe el código que te espera.
       </p>
       <AccessForm onSuccess={onSuccess} />

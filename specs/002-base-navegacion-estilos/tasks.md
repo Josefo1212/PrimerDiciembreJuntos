@@ -4,8 +4,9 @@
   - Hecho cuando: `package.json` declara `react-router` con versión 8, `pnpm-lock.yaml` está actualizado y `pnpm build` termina correctamente.
   - **Resultado:** `react-router@8.5.3` instalado y build correcto. El usuario confirmó que usara la versión 8 descargada por pnpm.
 
-- [ ] **T2. Migrar los estilos del feature `access` a CSS Modules.** RF-8, RF-9.
+- [x] **T2. Migrar los estilos del feature `access` a CSS Modules.** RF-8, RF-9.
   - Hecho cuando: `AccessView.css`, `WelcomeView.css` y `AccessForm.css` pasan a `*.module.css`; los componentes consumen `styles.nombreClase`; no quedan selectores globales nuevos; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Resultado:** clases simples en camelCase; Chrome DevTools muestra names con hash (`_page_2d4hd_1`, `_input_1kadn_16`); el halo de foco sigue aplicado.
 
 - [ ] **T3. Extraer el estado de acceso a `AccessProvider` y `useAccess`.** RF-2, RF-3, RF-4, RF-7.
   - Hecho cuando: `App.tsx` ya no posee el `useState` de acceso; el provider inicializa en `'locked'`; `useAccess` falla explícitamente fuera del provider; el comportamiento de la Spec 001 sigue intacto.

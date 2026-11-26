@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react'
 import { useAccessForm } from '../hooks/useAccessForm'
-import './AccessForm.css'
+import styles from './AccessForm.module.css'
 
 type AccessFormProps = {
   onSuccess: () => void
@@ -10,12 +10,12 @@ const AccessForm = ({ onSuccess }: AccessFormProps): ReactElement => {
   const { code, error, handleCodeChange, handleSubmit } = useAccessForm({ onSuccess })
 
   return (
-    <form className="accessForm" onSubmit={handleSubmit} noValidate>
-      <label className="accessForm__label" htmlFor="access-code">
+    <form className={styles.form} onSubmit={handleSubmit} noValidate>
+      <label className={styles.label} htmlFor="access-code">
         Código secreto
       </label>
       <input
-        className="accessForm__input"
+        className={styles.input}
         id="access-code"
         name="code"
         type="text"
@@ -28,13 +28,13 @@ const AccessForm = ({ onSuccess }: AccessFormProps): ReactElement => {
       />
 
       {error !== null && (
-        <p className="accessForm__error" id="access-error" role="alert">
-          <span className="accessForm__errorMark" aria-hidden="true" />
+        <p className={styles.error} id="access-error" role="alert">
+          <span className={styles.errorMark} aria-hidden="true" />
           {error}
         </p>
       )}
 
-      <button className="accessForm__button" type="submit">
+      <button className={styles.button} type="submit">
         Entrar
       </button>
     </form>

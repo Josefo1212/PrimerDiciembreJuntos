@@ -1,4 +1,4 @@
-.access {
+.page {
   min-height: 100svh;
   display: grid;
   place-items: center;
@@ -9,7 +9,7 @@
     var(--lavender-mist);
 }
 
-.access__card {
+.card {
   width: min(100%, 28rem);
   padding: clamp(2rem, 6vw, 3rem);
   border: 1px solid rgba(205, 181, 232, 0.65);
@@ -20,7 +20,7 @@
   text-align: center;
 }
 
-.access__eyebrow {
+.eyebrow {
   margin: 0 0 1.25rem;
   color: var(--dusty-violet);
   font-size: 0.72rem;
@@ -28,7 +28,7 @@
   text-transform: uppercase;
 }
 
-.access__title {
+.title {
   margin: 0;
   color: var(--deep-plum);
   font-family: var(--font-heading);
@@ -37,7 +37,7 @@
   line-height: 1.1;
 }
 
-.access__description {
+.description {
   margin: 1rem 0 2rem;
   color: var(--dusty-violet);
   line-height: 1.6;

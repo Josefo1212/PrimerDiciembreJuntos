@@ -1,4 +1,4 @@
-.welcome {
+.page {
   min-height: 100svh;
   display: grid;
   place-items: center;
@@ -9,7 +9,7 @@
     var(--lavender-mist);
 }
 
-.welcome__card {
+.card {
   position: relative;
   width: min(100%, 30rem);
   overflow: hidden;
@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-.welcome__eyebrow {
+.eyebrow {
   position: relative;
   z-index: 1;
   margin: 0 0 1.25rem;
@@ -32,7 +32,7 @@
   text-transform: uppercase;
 }
 
-.welcome__title {
+.title {
   position: relative;
   z-index: 1;
   margin: 0;
@@ -43,7 +43,7 @@
   line-height: 1.1;
 }
 
-.welcome__message {
+.message {
   position: relative;
   z-index: 1;
   margin: 1.25rem auto 0;
@@ -52,7 +52,7 @@
   line-height: 1.7;
 }
 
-.welcome__accent {
+.accent {
   position: absolute;
   right: -4rem;
   bottom: -5rem;
