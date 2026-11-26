@@ -22,6 +22,24 @@ Base visual: elegante, romántica y personal. Lavanda/lila protagonista, con Dec
 | Blush Pink | `#E9CADB` | Detalles románticos |
 | Warm Ivory | `#F6EEDF` | Detalles cálidos |
 
+## Extensión nocturna (Spec 006)
+
+Aprobada el 26/11/2026 para la portada de acceso y bienvenida. Se usa solo en la escena nocturna; el resto de la aplicación conserva la base Lavender Mist.
+
+| Nombre | Hex | Uso principal |
+| --- | --- | --- |
+| Night | `#1F172B` | Fondo profundo de la portada |
+| Night Soft | `#2E2240` | Superficie glass sobre el fondo nocturno |
+| Gold | `#C9A45C` | Sello, botones y acentos de atención |
+| Gold Light | `#E4C783` | Brillo y gradientes del dorado |
+
+```css
+--night: #1F172B;
+--night-soft: #2E2240;
+--gold: #C9A45C;
+--gold-light: #E4C783;
+```
+
 ## Distribución acordada
 
 | Uso | Color | Hex |
@@ -51,7 +69,8 @@ Base visual: elegante, romántica y personal. Lavanda/lila protagonista, con Dec
 
 ## Reglas de uso
 
-- El blanco se reserva para superficies; el fondo de la aplicación permanece en Lavender Mist.
+- El blanco se reserva para superficies; el fondo de la aplicación permanece en Lavender Mist salvo en la escena nocturna de la portada.
+- Night y Night Soft se reservan para la portada; Gold y Gold Light para sello, acciones y brillos sobre fondo oscuro.
 - Dusty Violet se usa para acciones principales; Lavender para controles y estados interactivos secundarios.
 - Deep Plum concentra jerarquía textual; no se usa como fondo extenso salvo que se valide contraste.
 - Blush Pink y Warm Ivory son acentos, no bases de lectura.

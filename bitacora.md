@@ -478,6 +478,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo; decidir si se usan Framer Motion y Lucide React.
 
+## 2026-11-26 — Spec 006 aprobada y T1: tokens nocturnos
+
+**Contexto:** el usuario no quedó conforme con la portada clara de la Spec 005. Pidió algo más profesional, elaborado, con animaciones y transiciones.
+
+**Decisiones confirmadas:** dirección «Noche de diciembre», animaciones con CSS/Web Animations sin Framer Motion, y sobre conservado pero enriquecido. Spec 006 aprobada con cinco tareas.
+
+**Implementación:** spec, plan y tareas de la Spec 006. Se añaden `--night`, `--night-soft`, `--gold` y `--gold-light` a `tokens.css` y a `PALETA.md` como extensión de la paleta para la portada.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos.
+
+**Pendiente:** T2 a T5 de la Spec 006.
+
 ## Plantilla para próximas entradas
 
 ```markdown
