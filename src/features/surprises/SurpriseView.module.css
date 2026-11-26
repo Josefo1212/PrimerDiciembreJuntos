@@ -1,32 +1,62 @@
 .page {
+  position: relative;
   min-height: 100svh;
   display: grid;
   place-items: center;
+  overflow: hidden;
   padding: clamp(1.5rem, 5vw, 3rem);
   background:
-    radial-gradient(circle at 20% 15%, rgba(233, 202, 219, 0.5), transparent 44%),
-    radial-gradient(circle at 80% 85%, rgba(205, 181, 232, 0.45), transparent 46%),
-    var(--lavender-mist);
+    radial-gradient(circle at 20% 15%, rgba(169, 139, 203, 0.28), transparent 44%),
+    radial-gradient(circle at 80% 85%, rgba(233, 202, 219, 0.16), transparent 46%),
+    linear-gradient(155deg, var(--night) 0%, var(--night-soft) 54%, #1a1325 100%);
+  color: var(--warm-ivory);
+  animation: surpriseIn 480ms ease-out both;
+}
+
+.page::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(90vw, 36rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(169, 139, 203, 0.16), transparent 66%);
+  filter: blur(26px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  content: '';
 }
 
 .card {
   position: relative;
+  z-index: 1;
   width: min(100%, 30rem);
   overflow: hidden;
   padding: clamp(2.25rem, 7vw, 3.5rem);
-  border: 1px solid rgba(205, 181, 232, 0.65);
+  border: 1px solid rgba(205, 181, 232, 0.42);
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 24px 60px rgba(81, 64, 100, 0.12);
+  background: rgba(46, 34, 64, 0.72);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 28px 64px rgba(8, 5, 14, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
   text-align: center;
+  animation: cardIn 560ms ease-out both;
+}
+
+.card::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(228, 199, 131, 0.55), transparent);
+  content: '';
 }
 
 .eyebrow {
   position: relative;
   z-index: 1;
   margin: 0 0 1.25rem;
-  color: var(--dusty-violet);
+  color: var(--gold-light);
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -36,11 +66,12 @@
   position: relative;
   z-index: 1;
   margin: 0;
-  color: var(--deep-plum);
+  color: var(--warm-ivory);
   font-family: var(--font-heading);
   font-size: clamp(2rem, 8vw, 2.9rem);
   font-weight: 400;
   line-height: 1.1;
+  text-shadow: 0 0 32px rgba(205, 181, 232, 0.22);
 }
 
 .message {
@@ -48,7 +79,7 @@
   z-index: 1;
   margin: 1.25rem auto 0;
   max-width: 22rem;
-  color: var(--dusty-violet);
+  color: rgba(246, 238, 223, 0.82);
   line-height: 1.7;
 }
 
@@ -58,30 +89,80 @@
   display: inline-block;
   margin-top: 2rem;
   padding: 0.85rem 1.5rem;
+  border: 1px solid rgba(228, 199, 131, 0.5);
   border-radius: 999px;
-  background: var(--dusty-violet);
-  color: var(--surface);
+  background: rgba(31, 23, 43, 0.55);
+  color: var(--gold-light);
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 160ms ease;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .backLink:hover {
-  background: var(--deep-plum);
+  border-color: var(--gold-light);
+  background: rgba(201, 164, 92, 0.14);
+  transform: translateY(-1px);
 }
 
 .backLink:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(128, 99, 158, 0.22);
+  box-shadow: 0 0 0 4px rgba(228, 199, 131, 0.38);
+}
+
+@keyframes surpriseIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .page,
+  .card {
+    animation: none;
+  }
+
   .backLink {
     transition: none;
+  }
+
+  .backLink:hover {
+    transform: none;
   }
 }
 
 @media (forced-colors: active) {
+  .page {
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .page::before,
+  .card::before {
+    display: none;
+  }
+
+  .card {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    backdrop-filter: none;
+  }
+
+  .eyebrow,
+  .title,
+  .message {
+    color: CanvasText;
+  }
+
+  .backLink {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+
   .backLink:focus-visible {
     outline: 2px solid CanvasText;
     outline-offset: 3px;

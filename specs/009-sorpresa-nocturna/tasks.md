@@ -1,0 +1,5 @@
+# Tareas — Spec 009: Sorpresa nocturna
+
+- [x] **T1. Aplicar la paleta nocturna a la vista de sorpresa y validarla.** RF-1 a RF-5.
+  - Hecho cuando: `SurpriseView.module.css` usa fondo nocturno, tarjeta glass, texto Warm Ivory, eyebrow y enlace dorados, con foco, `forced-colors` y movimiento reducido; se comprueba en navegador la apertura del día 5, la redirección del día 6, móvil/escritorio, consola y peticiones; `pnpm lint` y `pnpm build` terminan correctamente y la documentación queda actualizada.
+  - **Resultado:** fondo degradado plum/lila con halo, tarjeta glass `rgba(46, 34, 64, 0.72)` con blur 16px, texto Warm Ivory, eyebrow y enlace Gold Light. Al abrir el día 5 el contador pasó de 2 a 3 y el día quedó marcado como Visitado; el día 6 bloqueado redirigió al calendario por navegación interna. A 390×844 y 1280×800 no hay desbordamiento y la tarjeta queda centrada. `forced-colors` fuerza `Canvas`/`CanvasText`, `prefers-reduced-motion` elimina animaciones y transiciones, y el foco del enlace muestra halo dorado. Consola sin errores y peticiones solo locales. `pnpm lint` y `pnpm build` correctos.

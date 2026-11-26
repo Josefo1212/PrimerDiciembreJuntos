@@ -17,7 +17,7 @@ No se usa subtítulo. El nombre no lleva sufijos de edición o variante.
 
 El proyecto está en etapa de definición y preparación. Los documentos de referencia de Civik se usaron únicamente como modelo de estructura, profundidad y disciplina documental; sus decisiones de backend, Rust, PostgreSQL, hexagonalidad, auditoría y despliegue no se trasladan a este proyecto.
 
-**Estado:** bootstrap ejecutado; Specs 001 a 005 implementadas y validadas en navegador el 26/11/2026; Spec 006 de portada nocturna y Spec 007 de portada de luna y estrellas implementadas y validadas estáticamente el 26/11/2026, pendientes de comprobación visual en navegador (React 19 + TypeScript + Vite + pnpm + React Router 8 + CSS Modules + Dexie + Fontsource). La Spec 007 sustituye el sobre de la 006 por una luna con fases. El despliegue en Vercel quedó corregido con `outputDirectory: "dist"`. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados: el contenido actual es provisional.
+**Estado:** bootstrap ejecutado; Specs 001 a 005 implementadas y validadas en navegador el 26/11/2026; Spec 006 de portada nocturna quedó supersedida por la Spec 007; Specs 007 (portada de luna y estrellas), 008 (calendario nocturno) y 009 (sorpresa nocturna) implementadas y validadas en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm + React Router 8 + CSS Modules + Dexie + Fontsource). La Spec 007 sustituye el sobre de la 006 por una luna con fases. Portada, calendario y vista de sorpresa comparten la misma gama nocturna. El despliegue en Vercel quedó corregido con `outputDirectory: "dist"`. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados: el contenido actual es provisional.
 
 ### Decisiones confirmadas
 
@@ -32,7 +32,7 @@ El proyecto está en etapa de definición y preparación. Los documentos de refe
 - El código de acceso, si se implementa, será una barrera de experiencia local, no autenticación ni seguridad real.
 - La fecha del dispositivo puede modificarse; no se implementará una verificación de fecha confiable desde servidor.
 - Durante el desarrollo existe un panel para simular la fecha local; afecta solo al desbloqueo, se guarda en la sesión de la pestaña, no toca las visitas persistidas y no se incluye en producción.
-- Dirección visual: elegante, romántica y personal, con lavanda/lila como color protagonista y una estética Liquid Glass moderada. La portada usa una extensión nocturna con plum profundo, halo lila, luna creciente o llena y destellos dorados, documentada en `PALETA.md`.
+- Dirección visual: elegante, romántica y personal, con lavanda/lila como color protagonista y una estética Liquid Glass moderada. La portada usa una extensión nocturna con plum profundo, halo lila, luna creciente o llena y destellos dorados, documentada en `PALETA.md`. El calendario y la vista de sorpresa reutilizan esa misma noche.
 - Diseño mobile-first, adaptable a escritorio, con respeto por `prefers-reduced-motion`.
 - El audio no se reproduce automáticamente.
 - React Router 8 para rutas reales, aprobado el 26/11/2026.

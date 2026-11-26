@@ -618,6 +618,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Estado:** Spec 008 cerrada. Queda pendiente la vista de sorpresa, que aún usa la paleta clara anterior.
 
+## 2026-11-26 — Spec 009: sorpresa nocturna implementada y validada
+
+**Contexto:** el usuario señaló que la vista al abrir un día seguía con la paleta clara anterior.
+
+**Decisión:** Spec 009 aprobada. Aplicar a `SurpriseView` la misma noche de portada y calendario sin tocar contenido, visitas ni reglas de desbloqueo; un único cambio de CSS.
+
+**Implementación:** `SurpriseView.module.css` pasa a fondo plum/lila con halo, tarjeta glass oscura, texto Warm Ivory, eyebrow y enlace de retorno dorados. Añade entradas suaves, foco dorado, `prefers-reduced-motion` y `forced-colors`.
+
+**Validación:** con fecha de prueba `2026-12-05`, abrir el día 5 marcó la visita (contador 2 → 3) y el día 6 bloqueado redirigió al calendario por navegación interna. Sin desbordamiento a 390×844 ni a 1280×800, tarjeta centrada, foco visible, `forced-colors` y movimiento reducido comprobados. Consola sin errores y peticiones solo locales. `pnpm lint` y `pnpm build` correctos.
+
+**Pendiente general:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo; revisar `NotFoundView` si se quiere la misma noche también en rutas inválidas.
+
 ## Plantilla para próximas entradas
 
 ```markdown
