@@ -1,5 +1,5 @@
 .form {
-  --focus-ring: rgba(128, 99, 158, 0.22);
+  --focus-ring: rgba(228, 199, 131, 0.38);
 
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 
 .label {
-  color: var(--deep-plum);
+  color: var(--warm-ivory);
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -16,32 +16,32 @@
 .input {
   width: 100%;
   padding: 0.95rem 1rem;
-  border: 1px solid var(--pastel-lilac);
+  border: 1px solid rgba(205, 181, 232, 0.42);
   border-radius: 16px;
-  background: var(--lavender-mist);
-  color: var(--deep-plum);
+  background: rgba(15, 10, 22, 0.58);
+  color: var(--warm-ivory);
   font-size: 1.35rem;
   letter-spacing: 0.3em;
   text-align: center;
-  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
 .input:hover {
-  border-color: var(--lavender);
+  border-color: rgba(228, 199, 131, 0.6);
 }
 
 .input:focus-visible {
   outline: none;
-  border-color: var(--dusty-violet);
-  background: var(--surface);
+  border-color: var(--gold-light);
+  background: rgba(31, 23, 43, 0.9);
   box-shadow:
     0 0 0 4px var(--focus-ring),
-    0 10px 22px rgba(81, 64, 100, 0.1);
+    0 10px 22px rgba(8, 5, 14, 0.35);
 }
 
 .input[aria-invalid='true'] {
-  border-color: var(--dusty-violet);
-  background: var(--warm-ivory);
+  border-color: var(--blush-pink);
+  background: rgba(233, 202, 219, 0.1);
 }
 
 .error {
@@ -50,18 +50,19 @@
   gap: 0.6rem;
   margin: 0;
   padding: 0.7rem 0.9rem;
-  border-left: 3px solid var(--dusty-violet);
+  border-left: 3px solid var(--gold);
   border-radius: 12px;
-  background: var(--blush-pink);
-  color: var(--deep-plum);
+  background: rgba(233, 202, 219, 0.12);
+  color: var(--warm-ivory);
   font-size: 0.92rem;
+  animation: errorIn 280ms ease-out both;
 }
 
 .errorMark {
   width: 0.55rem;
   height: 0.55rem;
   flex: none;
-  border: 2px solid var(--dusty-violet);
+  border: 2px solid var(--gold-light);
   border-radius: 50%;
 }
 
@@ -71,17 +72,18 @@
   padding: 0.95rem 1.5rem;
   border: none;
   border-radius: 999px;
-  background: var(--dusty-violet);
-  box-shadow: 0 10px 22px rgba(81, 64, 100, 0.18);
-  color: var(--surface);
-  font-weight: 600;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  box-shadow: 0 10px 24px rgba(8, 5, 14, 0.35);
+  color: #24182f;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  transition: box-shadow 180ms ease, filter 180ms ease, transform 180ms ease;
 }
 
 .button:hover {
-  background: var(--deep-plum);
-  box-shadow: 0 12px 26px rgba(81, 64, 100, 0.24);
+  filter: brightness(1.07);
+  box-shadow: 0 14px 30px rgba(201, 164, 92, 0.28);
+  transform: translateY(-1px);
 }
 
 .button:active {
@@ -93,11 +95,39 @@
   box-shadow: 0 0 0 4px var(--focus-ring);
 }
 
+@keyframes errorIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .button {
+    transition: none;
+  }
+
+  .error {
+    animation: none;
+  }
+}
+
 @media (forced-colors: active) {
   .input:focus-visible,
   .button:focus-visible {
     outline: 2px solid CanvasText;
     outline-offset: 3px;
     box-shadow: none;
+  }
+
+  .button {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .error {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
   }
 }

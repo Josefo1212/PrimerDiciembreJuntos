@@ -12,8 +12,9 @@
   - Hecho cuando: `CoverMotif` incluye textura, pliegues, sombra, sello dorado, brillo, solapa animada y carta que sale en la variante abierta; sigue siendo decorativo y respeta movimiento reducido; `pnpm lint` y `pnpm build` terminan correctamente.
   - **Resultado:** sobre con textura de papel, pliegues degradados, sombra proyectada, lacre dorado con brillo periódico, solapa con vaivén en cerrado y giro en abierto, carta con líneas y fecha manuscrita que sale al abrir, y halo/destellos animados. `aria-hidden` conservado. Reglas explícitas de movimiento reducido y `forced-colors`. `pnpm lint` y `pnpm build` correctos.
 
-- [ ] **T4. Adaptar formulario y CTA, y conectar las vistas.** RF-2, RF-4, RF-6.
+- [x] **T4. Adaptar formulario y CTA, y conectar las vistas.** RF-2, RF-4, RF-6.
   - Hecho cuando: `AccessForm` y el CTA usan superficies oscuras, botón dorado y foco visible; `AccessView` y `WelcomeView` consumen `CoverScene` sin duplicar estilos; el código `2026` y el error accesible siguen funcionando; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Resultado:** `AccessView` y `WelcomeView` pasan a ser vistas delgadas sobre `CoverScene`; se elimina `AccessView.module.css` y `WelcomeView.module.css` queda reducido al CTA. Campo y botón usan superficie nocturna, texto claro y gradiente dorado, con halo de foco dorado. El error mantiene `role="alert"` y `aria-invalid`, ahora con animación de entrada. `pnpm lint` y `pnpm build` correctos; la comprobación funcional en navegador queda registrada como no ejecutada por falta de herramienta de navegador en esta sesión.
 
 - [ ] **T5. Validar y cerrar la spec.** RF-1 a RF-8.
   - Hecho cuando: se revisan lint, build, salida `dist`, ausencia de dependencias nuevas y peticiones externas, `aria-hidden`, foco, `forced-colors`, movimiento reducido y documentación actualizada.

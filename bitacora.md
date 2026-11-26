@@ -514,6 +514,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T4 y T5 de la Spec 006.
 
+## 2026-11-26 — T4: vistas conectadas a la escena nocturna
+
+**Contexto:** había que sustituir las dos portadas claras por la escena compartida sin perder el flujo de acceso.
+
+**Decisión:** las vistas solo entregan contenido; `CoverScene` posee fondo, estrellas, halo, columna y panel. Se elimina el CSS duplicado de `AccessView` y se conserva un módulo mínimo para el CTA.
+
+**Implementación:** `AccessView.tsx` y `WelcomeView.tsx` reescritos sobre `CoverScene`. `AccessForm.module.css` y `WelcomeView.module.css` adaptados a superficie oscura, botón dorado, foco visible y transiciones. Eliminado `AccessView.module.css`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. No se pudo ejecutar validación visual en navegador porque la herramienta de DevTools dejó de estar disponible en esta sesión; queda registrada como pendiente.
+
+**Pendiente:** T5 de validación estática y cierre de la Spec 006.
+
 ## Plantilla para próximas entradas
 
 ```markdown
