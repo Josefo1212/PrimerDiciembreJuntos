@@ -27,7 +27,7 @@ El proyecto está en etapa de definición y preparación. Los documentos de refe
 - Calendario de 31 días, del 1 al 31 de diciembre de 2026.
 - Desbloqueo progresivo según la fecha local del dispositivo.
 - Una vez que un día se desbloquea, puede volver a visitarse.
-- IndexedDB se utilizará para persistir progreso y preferencias locales; Dexie será el wrapper previsto para simplificar su acceso.
+- IndexedDB se utilizará para persistir progreso y preferencias locales; Dexie es el wrapper aprobado para simplificar su acceso, pendiente de instalación en la Spec 003.
 - El contenido estático de las sorpresas forma parte del bundle o de los assets estáticos. No se almacena en IndexedDB.
 - El código de acceso, si se implementa, será una barrera de experiencia local, no autenticación ni seguridad real.
 - La fecha del dispositivo puede modificarse; no se implementará una verificación de fecha confiable desde servidor.
@@ -44,13 +44,11 @@ Los puntos que siguen siendo propuesta no deben convertirse silenciosamente en r
 - React 19 + TypeScript estricto + Vite + pnpm.
 - Framer Motion para animaciones y Lucide React para iconografía.
 - Fuentes tipográficas definitivas y su instalación.
-- Dexie.js para IndexedDB.
 - `vite-plugin-pwa` para una posible fase PWA.
 - Exportación/importación de progreso en JSON.
 - Persistencia de la sesión de acceso.
 - Texto/código de acceso definitivo.
 - Contenido, título y formato concreto de cada uno de los 31 días.
-- Política exacta de qué significa completar una sorpresa, frente a simplemente abrirla.
 
 Cuando una decisión pendiente afecte una spec, detenerse y pedir aclaración antes de implementarla.
 
@@ -66,7 +64,7 @@ pnpm
 React Router 8 (paquete `react-router`) — aprobado 26/11/2026
 Framer Motion
 Lucide React
-Dexie.js (IndexedDB)
+Dexie.js (IndexedDB, aprobado 26/11/2026)
 CSS Modules (aprobado 26/11/2026) + CSS Variables
 Vercel (hosting estático)
 vite-plugin-pwa (opcional, fase posterior)
@@ -99,7 +97,7 @@ Distinguir explícitamente:
 - **Bloqueado:** la fecha local todavía es anterior al día correspondiente.
 - **Disponible:** la fecha ya permite abrir el día y todavía no se ha registrado como visitado.
 - **Visitado:** se abrió anteriormente. Sigue disponible para volver a entrar.
-- **Completado:** estado opcional que solo debe existir si se define una acción verificable que lo justifique. No equiparar automáticamente visitar con completar.
+- **Completado:** descartado el 26/11/2026. No existe hasta que se defina una acción verificable que lo justifique; abrir un día solo registra «visitado».
 
 La disponibilidad se calcula a partir de la fecha local del dispositivo. IndexedDB conserva el historial/progreso, pero no decide por sí sola qué día está desbloqueado.
 
@@ -124,13 +122,13 @@ IndexedDB es almacenamiento local del navegador. No sincroniza datos entre dispo
 
 Datos candidatos a persistir:
 
-- Progreso por día: identificador del día, fecha de primera visita, última visita y estado, según se defina.
+- Progreso por día: identificador del día, fecha de primera visita y última visita. El estado se deriva de la fecha local y de la existencia del registro; no se persiste.
 - Preferencias de interfaz que realmente existan.
 - Estado de acceso local, únicamente si se decide que debe sobrevivir al cierre del navegador.
 
 No guardar en IndexedDB el texto de cartas, fotos, videos, audios ni el contenido principal de las sorpresas. Ese contenido es estático y debe residir en el proyecto o en sus assets.
 
-Un registro por día con `dayId` como clave primaria es una opción inicial razonable. El esquema definitivo debe quedar descrito en la spec de persistencia antes de implementarse.
+Un registro por día con `dayId` como clave primaria es el esquema descrito en la Spec 003, que debe implementarse antes de escribir a IndexedDB.
 
 La aplicación debe tolerar que el almacenamiento del navegador se borre, que el usuario cambie de navegador o que IndexedDB no esté disponible. Definir comportamiento de error y una experiencia degradada; no fingir que los datos se sincronizan o respaldan automáticamente.
 
@@ -146,7 +144,7 @@ La aplicación debe tolerar que el almacenamiento del navegador se borre, que el
 - La navegación directa a una ruta de día no debe permitir saltarse el bloqueo.
 - La fecha local no es una fuente confiable de seguridad. Cambiar el reloj del dispositivo puede alterar el desbloqueo y esto se acepta explícitamente para un proyecto sin servidor.
 
-Aclarar en la spec cómo se interpreta la fecha en zonas horarias distintas y qué ocurre si el dispositivo cambia de zona horaria durante diciembre.
+Aclarado el 26/11/2026: se leen los componentes locales del dispositivo (`getFullYear`, `getMonth`, `getDate`), sin conversiones UTC. Si el dispositivo cambia de zona horaria o de reloj, el desbloqueo se recalcula con la nueva fecha local; esto se acepta explícitamente por tratarse de una barrera local sin servidor.
 
 ## Dirección visual
 

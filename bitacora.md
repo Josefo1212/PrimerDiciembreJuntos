@@ -246,7 +246,23 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Validación:** `pnpm lint` y `pnpm build` correctos. Sin `function`, `var` ni `any` en TypeScript. En navegador: acceso, error anunciado, bienvenida y recarga; `Tab` y `Shift+Tab` con halo visible; `/no-existe` con enlace de vuelta; clases CSS con hash; sin peticiones XHR/fetch; viewport 390×844 y `prefers-reduced-motion: reduce`; `vercel.json` con rewrite correcto.
 
-**Pendiente:** Spec 003 del calendario; sustituir el código temporal `2026`; aprobar Dexie y la política de «completado» antes de la spec de persistencia.
+**Pendiente:** Spec 003 del calendario y sustituir el código temporal `2026`.
+
+## 2026-11-26 — Decisiones para la Spec 003
+
+**Contexto:** antes de redactar la spec del calendario quedaban tres decisiones que afectaban al modelo de datos y al comportamiento observable.
+
+**Decisiones:**
+- Se aprueba **Dexie** como wrapper de IndexedDB. IndexedDB ya era la decisión confirmada; Dexie solo reduce el código de esquema, transacciones y errores. No añade backend ni sincronización.
+- Se descarta el estado **«completado»**. Abrir un día registra únicamente «visitado»; no se inventa una acción verificable para marcarlo.
+- La fecha se interpreta con los componentes locales del dispositivo (`getFullYear`, `getMonth`, `getDate`), sin conversiones UTC. Un cambio de reloj o zona horaria recalcula el desbloqueo y se acepta explícitamente.
+- La próxima spec agrupará calendario, fechas y persistencia en una sola unidad, porque el calendario debe mostrar el estado «visitado».
+
+**Documentación:** `AGENTS.md` mueve Dexie a decisiones confirmadas y stack aprobado, elimina la política de completado de pendientes y aclara el criterio de zona horaria; `CONVENTIONS.md` añade reglas de dominio y persistencia.
+
+**Validación:** documentación revisada; sin cambios de código ni dependencias instaladas todavía.
+
+**Pendiente:** escribir `spec.md`, `plan.md` y `tasks.md` de la Spec 003 y obtener aprobación antes de implementar.
 
 ## Plantilla para próximas entradas
 

@@ -68,6 +68,14 @@ src/
 - Las rutas se definen en `src/app/router.tsx` con `createBrowserRouter` (desde `react-router`) y `RouterProvider` (desde `react-router/dom`, API de v8). El estado de acceso se provee por Context y las rutas protegidas redirigen con `<Navigate to="/" replace />`.
 - No crear rutas ni pantallas de funcionalidades cuyas specs no estén aprobadas.
 
+## Dominio y persistencia
+
+- Los estados de los días se derivan de la fecha local y del registro de visita; el estado calculado no se persiste.
+- La lógica pura de fechas, desbloqueo y estados vive en `features/<feature>/rules/`; las vistas no la reimplementan.
+- No existe el estado «completado» sin una acción verificable aprobada en la spec.
+- El acceso a IndexedDB se encapsula en `src/database/`; ninguna vista manipula Dexie ni abre transacciones directamente.
+- Si el almacenamiento falla, se degrada la experiencia sin fingir que se guardó el progreso.
+
 ## Estilos
 
 - Los colores viven en `src/design-system/tokens.css` y en `PALETA.md`.
