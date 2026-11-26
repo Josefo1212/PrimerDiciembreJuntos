@@ -300,6 +300,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T4 a T8 de la Spec 003.
 
+## 2026-11-26 — T4: proveedor de progreso
+
+**Contexto:** calendario y sorpresa necesitan compartir el estado de visitas sin releer IndexedDB en cada vista.
+
+**Decisión:** `ProgressProvider` carga las visitas al montar, mantiene `storageStatus` (`loading`/`ready`/`unavailable`) y añade la visita al conjunto en memoria aunque falle la escritura. `useProgress` lanza un error explícito fuera del provider.
+
+**Implementación:** `shared/progress/context.ts`, `shared/progress/hooks/useProgress.ts` y `app/providers/ProgressProvider.tsx`; `App.tsx` monta el proveedor dentro de `AccessProvider`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En Chrome DevTools, la base `primerDiciembreJuntos` aparece en `indexedDB.databases()` y no hay mensajes de error o aviso en consola. El registro de una visita y la degradación quedan para T7 y T8.
+
+**Pendiente:** T5 a T8 de la Spec 003.
+
 ## Plantilla para próximas entradas
 
 ```markdown

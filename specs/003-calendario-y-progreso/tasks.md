@@ -12,8 +12,9 @@
   - Hecho cuando: `db.ts` declara la versión 1 con `dayProgress: 'dayId'`; `progress.ts` expone lectura de visitas y registro de visita con transacción que conserva `firstVisit`; ninguna vista importa Dexie; `pnpm lint` y `pnpm build` terminan correctamente.
   - **Resultado:** `shared/progress/types.ts`, `database/db.ts` y `database/progress.ts`. Comprobado con búsqueda que ninguna vista ni componente importa Dexie.
 
-- [ ] **T4. Crear el proveedor de progreso con estado degradado.** RF-13, RF-14, RF-18.
+- [x] **T4. Crear el proveedor de progreso con estado degradado.** RF-13, RF-14, RF-18.
   - Hecho cuando: `ProgressProvider` expone `visitedDayIds`, `storageStatus` y `markVisited`; carga al montar; si falla, mantiene visitas en memoria y no afirma que se guardó; `pnpm lint`, `pnpm build` y la comprobación en navegador terminan correctamente.
+  - **Resultado:** `ProgressContext`, `useProgress` y `ProgressProvider` montados desde `App.tsx`. En Chrome DevTools se creó la base `primerDiciembreJuntos` sin errores de consola; la visita real y la degradación se comprueban en T7 y T8.
 
 - [ ] **T5. Construir el calendario accesible de 31 días.** RF-1, RF-11, RF-17.
   - Hecho cuando: `/calendar` muestra 31 tarjetas con número, estado por texto/forma/color y progreso «N de 31 días visitados»; navegación por teclado, foco visible y `prefers-reduced-motion` verificados; `pnpm lint` y `pnpm build` terminan correctamente.
