@@ -17,7 +17,7 @@ No se usa subtítulo. El nombre no lleva sufijos de edición o variante.
 
 El proyecto está en etapa de definición y preparación. Los documentos de referencia de Civik se usaron únicamente como modelo de estructura, profundidad y disciplina documental; sus decisiones de backend, Rust, PostgreSQL, hexagonalidad, auditoría y despliegue no se trasladan a este proyecto.
 
-**Estado:** bootstrap ejecutado; Specs 001 de acceso, 002 de navegación y estilos, 003 de calendario y progreso, y 004 de fecha de prueba implementadas y validadas en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm + React Router 8 + CSS Modules + Dexie). El despliegue en Vercel quedó corregido con `outputDirectory: "dist"`. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados: el contenido actual es provisional.
+**Estado:** bootstrap ejecutado; Specs 001 de acceso, 002 de navegación y estilos, 003 de calendario y progreso, 004 de fecha de prueba y 005 de portada de acceso y bienvenida implementadas y validadas en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm + React Router 8 + CSS Modules + Dexie + Fontsource). El despliegue en Vercel quedó corregido con `outputDirectory: "dist"`. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados: el contenido actual es provisional.
 
 ### Decisiones confirmadas
 
@@ -37,6 +37,7 @@ El proyecto está en etapa de definición y preparación. Los documentos de refe
 - El audio no se reproduce automáticamente.
 - React Router 8 para rutas reales, aprobado el 26/11/2026.
 - CSS Modules para estilos de componentes, aprobado el 26/11/2026.
+- Fuentes locales instaladas con Fontsource el 26/11/2026: Cormorant Garamond, DM Sans y Caveat; sin CDN.
 
 ### Decisiones propuestas o pendientes de aprobación
 
@@ -44,7 +45,6 @@ Los puntos que siguen siendo propuesta no deben convertirse silenciosamente en r
 
 - React 19 + TypeScript estricto + Vite + pnpm.
 - Framer Motion para animaciones y Lucide React para iconografía.
-- Fuentes tipográficas definitivas y su instalación.
 - `vite-plugin-pwa` para una posible fase PWA.
 - Exportación/importación de progreso en JSON.
 - Persistencia de la sesión de acceso.
@@ -67,13 +67,14 @@ Framer Motion
 Lucide React
 Dexie.js (IndexedDB, aprobado 26/11/2026)
 CSS Modules (aprobado 26/11/2026) + CSS Variables
+Fontsource (fuentes locales, aprobado 26/11/2026)
 Vercel (hosting estático)
 vite-plugin-pwa (opcional, fase posterior)
 ```
 
 No incorporar Redux, Zustand, Axios, backend, PostgreSQL, ORM ni librerías de UI completas sin una necesidad demostrable. El estado compartido inicial puede resolverse con hooks y Context cuando corresponda.
 
-Las fuentes propuestas son Cormorant Garamond para títulos, DM Sans para interfaz y Caveat para detalles manuscritos puntuales. Confirmar su instalación durante el bootstrap.
+Las fuentes quedaron instaladas e integradas en la Spec 005: Cormorant Garamond para títulos, DM Sans para interfaz y Caveat para detalles manuscritos puntuales. Se sirven desde el bundle, sin CDN.
 
 ## Producto y experiencia
 
@@ -175,11 +176,12 @@ La paleta quedó cerrada el 26/11/2026 y se documenta en `PALETA.md`.
 
 La distribución por uso está en `PALETA.md`. Seguir validando contraste y legibilidad en los estados reales de la interfaz.
 
-### Tipografía propuesta
+### Tipografía confirmada
 
 - Cormorant Garamond: títulos y encabezados expresivos.
 - DM Sans: interfaz, controles y texto de lectura.
 - Caveat: notas manuscritas breves y ocasionales.
+- Instaladas con Fontsource e importadas desde `src/main.tsx`; las variables están en `src/index.css`.
 
 ### UX y accesibilidad
 

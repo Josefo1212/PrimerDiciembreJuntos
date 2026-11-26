@@ -1,6 +1,6 @@
 # Spec 005 — Portada de acceso y bienvenida
 
-Estado: **aprobada** el 26/11/2026.
+Estado: **implementada y validada** el 26/11/2026.
 
 ## Contexto y objetivo
 

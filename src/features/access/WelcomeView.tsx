@@ -9,7 +9,7 @@ const WelcomeView = (): ReactElement => (
       <div className={styles.intro}>
         <p className={styles.eyebrow}>Ya estás dentro</p>
         <h1 className={styles.title} id="welcome-title">
-          Bienvenida,
+          Bienvenida,{' '}
           <em className={styles.titleAccent}>Isabela</em>
         </h1>
         <p className={styles.lead}>

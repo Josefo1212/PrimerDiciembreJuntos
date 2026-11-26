@@ -466,6 +466,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T5 de validación integral y cierre de la Spec 005.
 
+## 2026-11-26 — Spec 005 validada y cerrada
+
+**Contexto:** cierre de la portada de acceso y bienvenida. Se revisaron los ocho requisitos funcionales y la invasión mínima en el comportamiento existente.
+
+**Decisión:** se considera cerrada la Spec 005. Las fuentes pasan a ser una decisión confirmada y forman parte del stack; el acceso sigue siendo una barrera local en memoria.
+
+**Implementación:** ajuste final de espacios en los `h1` para que el nombre accesible sea «Primer Diciembre juntos» y «Bienvenida, Isabela». Actualización de `spec.md`, `tasks.md`, `AGENTS.md` y esta bitácora.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En navegador: error accesible con código incorrecto, acceso con `2026`, sobre abierto en bienvenida y vuelta a la portada tras recargar. Dos elementos decorativos `aria-hidden`, ninguno enfocable. Sin errores de consola ni peticiones externas. 390×844 sin desbordamiento; 1280×800 con columnas equilibradas; `forced-colors` con outline sólido de 2 px; movimiento reducido sin transiciones. En `pnpm preview`, fuentes locales disponibles y sin panel de desarrollo. `dist` no referencia dominios externos de fuentes.
+
+**Pendiente:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo; decidir si se usan Framer Motion y Lucide React.
+
 ## Plantilla para próximas entradas
 
 ```markdown

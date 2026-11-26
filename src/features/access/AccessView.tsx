@@ -9,7 +9,7 @@ const AccessView = (): ReactElement => (
       <div className={styles.intro}>
         <p className={styles.eyebrow}>Diciembre de 2026</p>
         <h1 className={styles.title} id="access-title">
-          Primer Diciembre
+          Primer Diciembre{' '}
           <em className={styles.titleAccent}>juntos</em>
         </h1>
         <p className={styles.lead}>
