@@ -1,6 +1,6 @@
 # Spec 006 — Portada nocturna y animaciones
 
-Estado: **aprobada** el 26/11/2026.
+Estado: **implementada y validada estáticamente** el 26/11/2026.
 
 ## Contexto y objetivo
 

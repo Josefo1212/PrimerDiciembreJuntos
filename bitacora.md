@@ -526,6 +526,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T5 de validación estática y cierre de la Spec 006.
 
+## 2026-11-26 — Spec 006 validada estáticamente y cerrada
+
+**Contexto:** respuesta a la insatisfacción del usuario con la portada clara. Se sustituyó por una escena nocturna más elaborada, con animaciones y transiciones.
+
+**Decisiones:** Noche de diciembre, animaciones CSS sin Framer Motion, sobre conservado pero enriquecido. La paleta se amplió con Night, Night Soft, Gold y Gold Light solo para la portada. `AGENTS.md` refleja el nuevo estado y la decisión confirmada.
+
+**Implementación:** `CoverScene` compartido, `CoverMotif` enriquecido, formulario y CTA adaptados a fondo oscuro, vistas reducidas a composición, eliminación de CSS duplicado y 13 `@keyframes` en el bundle.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. `dist` contiene las reglas `prefers-reduced-motion` y `forced-colors`, los cuatro tokens nocturnos y ninguna URL externa. No hay dependencias de Framer Motion/Lucide ni `function`, `var` o `any`. Decoración `aria-hidden`. **Pendiente de validación visual/funcional en navegador**: la herramienta de DevTools dejó de estar disponible en esta sesión; debe comprobarse con `pnpm dev` el flujo de código, foco, responsive y apariencia de las animaciones.
+
+**Pendiente general:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo; validación visual de la Spec 006.
+
 ## Plantilla para próximas entradas
 
 ```markdown
