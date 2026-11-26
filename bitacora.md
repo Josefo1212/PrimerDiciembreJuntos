@@ -370,6 +370,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Validación:** `vercel.json` analizado correctamente con Node; `pnpm lint` y `pnpm build` correctos. El build generó `dist/index.html` y `dist/assets/...`. Queda pendiente comprobar el deploy remoto y revisar en Vercel que el Framework Preset sea Vite y la raíz del proyecto apunte a la carpeta con `package.json`.
 
+## 2026-11-26 — Spec 004 aprobada y T1: reglas de fecha de prueba
+
+**Contexto:** la fecha real es 26/11/2026 y el calendario aparece bloqueado durante las pruebas. El usuario aprobó una herramienta de desarrollo para simular la fecha sin tocar el reloj del sistema.
+
+**Decisiones confirmadas:** panel solo en desarrollo, fecha simulada exclusivamente para desbloqueo, visitas con fecha real, persistencia solo en la sesión de la pestaña y nada de esto en producción. La spec, el plan y las tareas quedaron aprobados el 26/11/2026 para T1–T4 seguidos.
+
+**Implementación:** `src/shared/time/previewDate.ts` con parseo estricto de `AAAA-MM-DD`, formato local, `sessionStorage` con respaldo en memoria y limpieza. `previewDate.check.ts` añade 15 casos ejecutables. El módulo no usa `import.meta.env` para poder comprobarse con Node.
+
+**Validación:** `node src/shared/time/previewDate.check.ts` devuelve 15/15 casos correctos; `pnpm lint` correcto.
+
+**Pendiente:** T2 a T4 de la Spec 004.
+
 ## Plantilla para próximas entradas
 
 ```markdown

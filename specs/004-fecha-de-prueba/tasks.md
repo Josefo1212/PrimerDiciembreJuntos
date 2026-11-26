@@ -1,7 +1,8 @@
 # Tareas — Spec 004: fecha de prueba para desarrollo
 
-- [ ] **T1. Crear las reglas puras y el almacenamiento de sesión de la fecha de prueba.** RF-4, RF-6.
+- [x] **T1. Crear las reglas puras y el almacenamiento de sesión de la fecha de prueba.** RF-4, RF-6.
   - Hecho cuando: `previewDate.ts` expone parseo, formato, lectura, escritura y limpieza; `node src/shared/time/previewDate.check.ts` valida fechas correctas e incorrectas y el uso sin `sessionStorage`; `pnpm lint` termina correctamente.
+  - **Resultado:** `src/shared/time/previewDate.ts` y `previewDate.check.ts`. 15/15 casos correctos con Node; `pnpm lint` correcto. El módulo usa `sessionStorage` con respaldo en memoria y no depende de `import.meta.env`.
 
 - [ ] **T2. Unificar la fecha de desbloqueo con un guard de desarrollo.** RF-2, RF-7.
   - Hecho cuando: `getUnlockDate()` usa la fecha de prueba solo con `import.meta.env.DEV`; `CalendarView` y `SurpriseView` lo usan en lugar de `new Date()`; `ProgressProvider` conserva la fecha real; `pnpm lint` y `pnpm build` terminan correctamente.
