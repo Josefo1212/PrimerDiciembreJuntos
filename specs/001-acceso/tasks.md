@@ -1,0 +1,27 @@
+# Tareas 001 — Acceso local inicial
+
+- [x] **T1. Crear `src/design-system/tokens.css` con los tokens confirmados de `PALETA.md`.** Requisitos no funcionales de paleta.
+  - Hecho cuando: los nueve tokens (`--lavender-mist`, `--soft-lilac`, `--pastel-lilac`, `--lavender`, `--dusty-violet`, `--deep-plum`, `--blush-pink`, `--warm-ivory`, `--surface`) están definidos con los valores exactos y `PALETA.md` coincide con ellos.
+
+- [x] **T2. Ajustar `src/index.css` como estilo global base e importar los tokens.** Requisitos no funcionales de paleta y mobile-first.
+  - Hecho cuando: el fondo es `--lavender-mist`, el texto base es `--deep-plum`, hay un reset mínimo y el archivo importa `tokens.css`.
+
+- [x] **T3. Implementar `src/features/access/accessRules.ts` con la lógica pura de validación.** RF-2, RF-3, RF-8, RF-9, RF-12.
+  - Hecho cuando: `normalizeCode`, `getAccessError` e `isCodeValid` producen los resultados de los criterios de aceptación, incluidos `  2026  `, `abc`, `20a6` y campo vacío.
+
+- [x] **T4. Construir `AccessView.tsx` y `AccessView.css` con el formulario de acceso.** RF-1, RF-3, RF-7, RF-12; paleta y movimiento reducido.
+  - Hecho cuando: hay un campo etiquetado, un botón, mensaje de error anunciable, estados de foco visibles, diseño móvil/escritorio y sin dependencia del color para el error.
+
+- [x] **T5. Construir `WelcomeView.tsx` y `WelcomeView.css` como pantalla provisional.** RF-11; paleta y movimiento reducido.
+  - Hecho cuando: muestra un mensaje de bienvenida personal sin calendario ni rutas, usando los tokens y sin animaciones no esenciales.
+
+- [x] **T6. Integrar ambas vistas en `App.tsx` con estado local `locked | unlocked`.** RF-1, RF-6, RF-10, RF-11.
+  - Hecho cuando: al cargar aparece `AccessView`; con `2026` aparece `WelcomeView`; al recargar vuelve `AccessView`; no hay `fetch` ni almacenamiento.
+
+- [ ] **T7. Validar el conjunto con lint, build y comprobación manual.** Criterios de aceptación completos.
+  - Hecho cuando: `pnpm lint` y `pnpm build` terminan correctamente y se han recorrido uno a uno los casos de aceptación, incluidos teclado, recarga, red, móvil/escritorio y `prefers-reduced-motion`.
+  - **Avance real:** `pnpm lint` y `pnpm build` terminaron correctamente; las reglas puras se compilaron y ejecutaron con los seis casos de aceptación en verde; no hay `fetch`, almacenamiento ni dependencias nuevas en `src/`.
+  - **Pendiente:** recorrido manual en navegador de foco/teclado, móvil/escritorio, `prefers-reduced-motion` y pestaña Network.
+
+- [ ] **T8. Documentar y aplicar las convenciones de código aprobadas.** Convenciones generales del proyecto.
+  - Hecho cuando: existe `CONVENTIONS.md` con funciones flecha obligatorias, sintaxis moderna, estructura feature-based, hooks/reglas separados y commit por tarea; `AGENTS.md`, `constitution.md` y `SKILL.md` la referencian; el código existente cumple las reglas y cada tarea tiene su commit.
