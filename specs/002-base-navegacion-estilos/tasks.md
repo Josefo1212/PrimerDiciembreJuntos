@@ -20,5 +20,6 @@
   - Hecho cuando: el archivo contiene `{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}` y es JSON válido.
   - **Resultado:** validado con Node; incluye `$schema` de Vercel.
 
-- [ ] **T6. Validar el conjunto con lint, build y Chrome DevTools.** Criterios de aceptación completos.
+- [x] **T6. Validar el conjunto con lint, build y Chrome DevTools.** Criterios de aceptación completos.
   - Hecho cuando: se comprueban acceso, bienvenida, recarga, error, teclado y foco, ruta no encontrada, clases con scope local y ausencia de peticiones de red; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Resultado:** `pnpm lint` y `pnpm build` correctos; sin `function`, `var` ni `any` en TypeScript; clases con hash en Elements; `Tab`/`Shift+Tab` con halo; `1234` error anunciado, `2026` bienvenida, recarga al acceso; `/no-existe` y enlace de vuelta; sin XHR/fetch; móvil 390×844 y movimiento reducido; `vercel.json` verificado.

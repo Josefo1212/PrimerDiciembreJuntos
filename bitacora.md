@@ -236,6 +236,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T6 de la Spec 002.
 
+## 2026-11-26 — Spec 002 validada y cerrada
+
+**Contexto:** última tarea de la Spec 002. Se validó el conjunto completo con lint, build y Chrome DevTools.
+
+**Decisiones:** se considera cerrada la Spec 002; el router y los módulos CSS pasan a ser la base del proyecto. El estado del proyecto se actualiza en `AGENTS.md`.
+
+**Implementación:** sin cambios de código; actualización de `spec.md`, `tasks.md`, `AGENTS.md` y esta bitácora.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. Sin `function`, `var` ni `any` en TypeScript. En navegador: acceso, error anunciado, bienvenida y recarga; `Tab` y `Shift+Tab` con halo visible; `/no-existe` con enlace de vuelta; clases CSS con hash; sin peticiones XHR/fetch; viewport 390×844 y `prefers-reduced-motion: reduce`; `vercel.json` con rewrite correcto.
+
+**Pendiente:** Spec 003 del calendario; sustituir el código temporal `2026`; aprobar Dexie y la política de «completado» antes de la spec de persistencia.
+
 ## Plantilla para próximas entradas
 
 ```markdown

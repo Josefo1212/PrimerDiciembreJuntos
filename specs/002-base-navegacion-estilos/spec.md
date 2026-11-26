@@ -1,6 +1,6 @@
 # Spec 002 — Base de navegación y estilos
 
-Estado: **propuesta**, pendiente de aprobación.
+Estado: **aprobada e implementada** el 26/11/2026.
 
 ## Contexto y objetivo
 
