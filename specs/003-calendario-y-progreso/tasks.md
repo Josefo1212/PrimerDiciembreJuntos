@@ -8,8 +8,9 @@
   - Hecho cuando: `dateRules.ts` expone `isValidDayId`, `isDayUnlocked` y `getDayStatus` sin React ni DOM; el script de casos con Node comprueba 30/11, 1/12, 5/12, 31/12, 1/1/2027, identificadores inválidos y día visitado; `pnpm lint` y `pnpm build` terminan correctamente.
   - **Resultado:** 22/22 casos correctos con Node 26; `parseDayId` añadido para la ruta; lint y build correctos.
 
-- [ ] **T3. Definir el esquema de Dexie y encapsular el acceso a IndexedDB.** RF-12, RF-6.
+- [x] **T3. Definir el esquema de Dexie y encapsular el acceso a IndexedDB.** RF-12, RF-6.
   - Hecho cuando: `db.ts` declara la versión 1 con `dayProgress: 'dayId'`; `progress.ts` expone lectura de visitas y registro de visita con transacción que conserva `firstVisit`; ninguna vista importa Dexie; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Resultado:** `shared/progress/types.ts`, `database/db.ts` y `database/progress.ts`. Comprobado con búsqueda que ninguna vista ni componente importa Dexie.
 
 - [ ] **T4. Crear el proveedor de progreso con estado degradado.** RF-13, RF-14, RF-18.
   - Hecho cuando: `ProgressProvider` expone `visitedDayIds`, `storageStatus` y `markVisited`; carga al montar; si falla, mantiene visitas en memoria y no afirma que se guardó; `pnpm lint`, `pnpm build` y la comprobación en navegador terminan correctamente.

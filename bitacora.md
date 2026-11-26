@@ -288,6 +288,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T3 a T8 de la Spec 003.
 
+## 2026-11-26 — T3: esquema y acceso a IndexedDB
+
+**Contexto:** las vistas no deben conocer Dexie ni abrir transacciones.
+
+**Decisión:** un único object store `dayProgress` con `dayId` como clave primaria, versión 1. La escritura ocurre dentro de una transacción `rw` que lee el registro previo para conservar `firstVisit`.
+
+**Implementación:** `shared/progress/types.ts` con `DayProgressRecord`, `StorageStatus` y `ProgressContextValue`; `database/db.ts` con la instancia de Dexie; `database/progress.ts` con `getVisitedDayIds` y `registerDayVisit`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. Búsqueda de importaciones: ninguna vista o componente importa Dexie ni el módulo de base de datos. La operación real contra IndexedDB se validará en T4 y T7.
+
+**Pendiente:** T4 a T8 de la Spec 003.
+
 ## Plantilla para próximas entradas
 
 ```markdown
