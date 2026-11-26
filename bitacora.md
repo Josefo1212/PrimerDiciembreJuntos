@@ -164,6 +164,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** sustituir el código temporal `2026` por el definitivo antes del despliegue; aprobar CSS Modules y React Router cuando se necesiten.
 
+## 2026-11-26 — React Router 7 y CSS Modules aprobados
+
+**Contexto:** antes de escribir la spec del calendario había dos decisiones pendientes que afectaban su arquitectura: navegación por estado frente a rutas reales, y CSS global frente a CSS Modules.
+
+**Decisiones:** se aprueba React Router 7 (paquete `react-router`) para las cinco vistas previstas y se aprueba CSS Modules para los estilos de componentes. Los tokens y estilos globales siguen en `design-system/` e `index.css`. El despliegue en Vercel requerirá un rewrite SPA a `index.html`.
+
+**Documentación:** `AGENTS.md` mueve ambas decisiones a confirmadas, actualiza el stack, el orden de construcción y los comandos; `CONVENTIONS.md` fija `router.tsx`, Context de acceso, rutas protegidas con `<Navigate replace />` y el patrón `*.module.css`; `spec.md` de la Spec 001 aclara que esas decisiones son posteriores a su alcance.
+
+**Validación:** documentación revisada; sin cambios de código ni dependencias instaladas todavía.
+
+**Pendiente:** redactar la spec de la base de navegación y estilos con plan y tareas, y obtener aprobación antes de instalar o migrar.
+
 ## Plantilla para próximas entradas
 
 ```markdown

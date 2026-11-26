@@ -17,7 +17,7 @@ No se usa subtítulo. El nombre no lleva sufijos de edición o variante.
 
 El proyecto está en etapa de definición y preparación. Los documentos de referencia de Civik se usaron únicamente como modelo de estructura, profundidad y disciplina documental; sus decisiones de backend, Rust, PostgreSQL, hexagonalidad, auditoría y despliegue no se trasladan a este proyecto.
 
-**Estado:** bootstrap ejecutado y Spec 001 de acceso implementada el 26/11/2026 (React 19 + TypeScript + Vite + pnpm), sin dependencias adicionales instaladas todavía. La vista fue validada en navegador el 26/11/2026: teclado y foco, error anunciado, recarga, ausencia de peticiones, móvil y movimiento reducido. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados.
+**Estado:** bootstrap ejecutado y Spec 001 de acceso implementada y validada en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm). El 26/11/2026 se aprobaron React Router 7 y CSS Modules; su instalación y migración siguen pendientes. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados.
 
 ### Decisiones confirmadas
 
@@ -34,15 +34,16 @@ El proyecto está en etapa de definición y preparación. Los documentos de refe
 - Dirección visual: elegante, romántica y personal, con lavanda/lila como color protagonista y una estética Liquid Glass moderada.
 - Diseño mobile-first, adaptable a escritorio, con respeto por `prefers-reduced-motion`.
 - El audio no se reproduce automáticamente.
+- React Router 7 para rutas reales, aprobado el 26/11/2026.
+- CSS Modules para estilos de componentes, aprobado el 26/11/2026.
 
 ### Decisiones propuestas o pendientes de aprobación
 
 Los puntos que siguen siendo propuesta no deben convertirse silenciosamente en requisitos cerrados:
 
 - React 19 + TypeScript estricto + Vite + pnpm.
-- React Router 7 para rutas.
 - Framer Motion para animaciones y Lucide React para iconografía.
-- CSS Modules, CSS variables y un design system pequeño propio.
+- Fuentes tipográficas definitivas y su instalación.
 - Dexie.js para IndexedDB.
 - `vite-plugin-pwa` para una posible fase PWA.
 - Exportación/importación de progreso en JSON.
@@ -55,18 +56,18 @@ Cuando una decisión pendiente afecte una spec, detenerse y pedir aclaración an
 
 ## Stack previsto
 
-El stack objetivo, sujeto a confirmación durante la fase de bootstrap, es:
+Stack aprobado hasta ahora; el resto sigue propuesto hasta su aprobación explícita:
 
 ```text
 React 19
 TypeScript (strict)
 Vite
 pnpm
-React Router 7 (paquete `react-router`, si se necesitan rutas)
+React Router 7 (paquete `react-router`) — aprobado 26/11/2026
 Framer Motion
 Lucide React
 Dexie.js (IndexedDB)
-CSS Modules + CSS Variables
+CSS Modules (aprobado 26/11/2026) + CSS Variables
 Vercel (hosting estático)
 vite-plugin-pwa (opcional, fase posterior)
 ```
@@ -254,12 +255,13 @@ El orden definitivo se aprueba fase por fase mediante SDD.
 
 1. **Bootstrap y base visual:** crear proyecto, configurar TypeScript, scripts, estructura mínima, estilos globales y tokens.
 2. **Welcome / Access:** construir bienvenida y resolver el comportamiento del código local, si se mantiene.
-3. **Calendario:** cuadrícula de 31 días, estados visuales y navegación.
-4. **Persistencia y fechas:** IndexedDB, progreso, desbloqueo por fecha y casos de error.
-5. **Motor de sorpresas:** modelo de contenido y renderizado de los tipos aprobados.
-6. **Memories y Finale:** archivo de visitas y experiencia especial final.
-7. **PWA opcional:** instalación y comportamiento offline, solo si se aprueba.
-8. **Validación y despliegue:** pruebas, accesibilidad, rendimiento, revisión responsive y Vercel.
+3. **Base de navegación y estilos:** instalar React Router 7, migrar a CSS Modules y configurar el rewrite de Vercel.
+4. **Calendario:** cuadrícula de 31 días, estados visuales y navegación.
+5. **Persistencia y fechas:** IndexedDB, progreso, desbloqueo por fecha y casos de error.
+6. **Motor de sorpresas:** modelo de contenido y renderizado de los tipos aprobados.
+7. **Memories y Finale:** archivo de visitas y experiencia especial final.
+8. **PWA opcional:** instalación y comportamiento offline, solo si se aprueba.
+9. **Validación y despliegue:** pruebas, accesibilidad, rendimiento, revisión responsive y Vercel.
 
 ## Comandos previstos
 
@@ -271,12 +273,13 @@ pnpm install
 pnpm dev
 ```
 
-Después se renombraron la carpeta a `primerDiciembreJuntos` y el paquete a `primer-diciembre-juntos`. Las dependencias adicionales siguen pendientes de aprobación.
+Después se renombraron la carpeta a `primerDiciembreJuntos` y el paquete a `primer-diciembre-juntos`. React Router 7 y CSS Modules están aprobados; el resto de dependencias siguen pendientes.
 
 Dependencias posteriores, solo cuando la fase correspondiente esté aprobada:
 
 ```bash
-pnpm add react-router dexie
+pnpm add react-router
+pnpm add dexie
 pnpm add @fontsource/cormorant-garamond @fontsource/dm-sans @fontsource/caveat
 pnpm add -D vite-plugin-pwa
 ```

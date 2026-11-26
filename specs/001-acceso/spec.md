@@ -70,7 +70,7 @@ El objetivo es que la entrada se sienta personal y cuidada, coherente con la pal
 - Persistencia del progreso de los 31 días.
 - Verificación de fecha del dispositivo.
 - Cualquier servicio remoto o login real.
-- Rutas con React Router; se decide en una fase posterior.
+- Rutas con React Router en la Spec 001; aprobadas globalmente el 26/11/2026 para fases posteriores.
 
 ## Criterios de aceptación
 
@@ -92,4 +92,4 @@ El objetivo es que la entrada se sienta personal y cuidada, coherente con la pal
 - Persistencia: ninguna; el código se pide en cada visita.
 - Error: mensaje suave, reintentos ilimitados, sin espera.
 - Tras acertar: pantalla provisional de bienvenida, sin rutas todavía.
-- Estilos: CSS global con variables; CSS Modules queda pendiente de aprobación para fases posteriores.
+- Estilos en la Spec 001: CSS global con variables. CSS Modules aprobado el 26/11/2026 para la migración posterior.

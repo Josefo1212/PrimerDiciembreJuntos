@@ -29,7 +29,8 @@ Estas reglas aplican a todo el código del proyecto. No son preferencias estéti
 ```text
 src/
 ├── app/
-│   └── App.tsx
+│   ├── App.tsx
+│   └── router.tsx
 ├── components/
 │   └── ui/                 # solo controles reutilizables de verdad
 ├── design-system/
@@ -41,7 +42,7 @@ src/
 │       ├── rules/
 │       ├── types.ts
 │       ├── <Feature>View.tsx
-│       └── <Feature>View.css
+│       └── <Feature>View.module.css
 ├── styles/                 # estilos globales, si se requieren además de index.css
 └── main.tsx
 ```
@@ -64,11 +65,14 @@ src/
 - Accesibilidad desde el inicio: etiquetas, `aria-*`, foco visible, mensajes anunciables y navegación por teclado.
 - No depender solo del color para comunicar estado.
 - No reproducir multimedia automáticamente.
+- Las rutas se definen en `src/app/router.tsx` con `createBrowserRouter` y `RouterProvider`. El estado de acceso se provee por Context y las rutas protegidas redirigen con `<Navigate to="/" replace />`.
+- No crear rutas ni pantallas de funcionalidades cuyas specs no estén aprobadas.
 
 ## Estilos
 
 - Los colores viven en `src/design-system/tokens.css` y en `PALETA.md`.
-- Cada componente tiene su archivo CSS junto a él.
+- Los estilos de componentes usan CSS Modules: `Componente.module.css`, importado como `styles` y aplicado con `styles.nombreClase`.
+- Solo `src/index.css` y los archivos de `design-system/` son globales; el resto se scoppea con Modules.
 - Mobile-first, con media queries para crecer.
 - `prefers-reduced-motion` reduce o elimina animaciones no esenciales.
 - El foco visible se diseña, no se hereda del navegador: halo suave con un token de la paleta y suficiente contraste. Si se suprime `outline`, se incluye un fallback con `@media (forced-colors: active)`.
