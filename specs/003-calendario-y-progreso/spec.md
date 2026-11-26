@@ -1,6 +1,6 @@
 # Spec 003 — Calendario, fechas y progreso local
 
-Estado: **borrador**, pendiente de aprobación del texto. Las decisiones de fondo (Dexie, ausencia de «completado» e interpretación de la fecha local) fueron aprobadas el 26/11/2026.
+Estado: **implementada y validada** el 26/11/2026. Las decisiones de fondo (Dexie, ausencia de «completado» e interpretación de la fecha local) fueron aprobadas el 26/11/2026.
 
 ## Contexto y objetivo
 

@@ -17,7 +17,7 @@ No se usa subtítulo. El nombre no lleva sufijos de edición o variante.
 
 El proyecto está en etapa de definición y preparación. Los documentos de referencia de Civik se usaron únicamente como modelo de estructura, profundidad y disciplina documental; sus decisiones de backend, Rust, PostgreSQL, hexagonalidad, auditoría y despliegue no se trasladan a este proyecto.
 
-**Estado:** bootstrap ejecutado; Spec 001 de acceso y Spec 002 de navegación y estilos implementadas y validadas en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm + React Router 8 + CSS Modules). Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados.
+**Estado:** bootstrap ejecutado; Specs 001 de acceso, 002 de navegación y estilos, y 003 de calendario y progreso implementadas y validadas en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm + React Router 8 + CSS Modules + Dexie). Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados: el contenido actual es provisional.
 
 ### Decisiones confirmadas
 
@@ -27,7 +27,7 @@ El proyecto está en etapa de definición y preparación. Los documentos de refe
 - Calendario de 31 días, del 1 al 31 de diciembre de 2026.
 - Desbloqueo progresivo según la fecha local del dispositivo.
 - Una vez que un día se desbloquea, puede volver a visitarse.
-- IndexedDB se utilizará para persistir progreso y preferencias locales; Dexie es el wrapper aprobado para simplificar su acceso, pendiente de instalación en la Spec 003.
+- IndexedDB se utilizará para persistir progreso y preferencias locales; Dexie es el wrapper aprobado e instalado en la Spec 003 para simplificar su acceso.
 - El contenido estático de las sorpresas forma parte del bundle o de los assets estáticos. No se almacena en IndexedDB.
 - El código de acceso, si se implementa, será una barrera de experiencia local, no autenticación ni seguridad real.
 - La fecha del dispositivo puede modificarse; no se implementará una verificación de fecha confiable desde servidor.

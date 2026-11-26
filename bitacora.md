@@ -348,6 +348,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T8 de validación integral y cierre de la Spec 003.
 
+## 2026-11-26 — Spec 003 validada y cerrada
+
+**Contexto:** última tarea de la Spec 003. Se recorrieron los criterios de aceptación y se comprobó la degradación del almacenamiento.
+
+**Decisiones:** se considera cerrada la Spec 003. El calendario, las reglas de fecha y Dexie pasan a ser la base del proyecto; no se añade «completado». `AGENTS.md` refleja el estado implementado y el contenido provisional de los días.
+
+**Implementación:** sin cambios de código; actualización de `spec.md`, `tasks.md`, `AGENTS.md` y esta bitácora. Para simular IndexedDB no disponible se parcheó `indexedDB.open` en `index.html` solo durante la prueba; el archivo se restauró y `git diff` confirma que quedó sin cambios.
+
+**Validación:** 22/22 reglas con Node 26; `pnpm lint` y `pnpm build` correctos; sin `function`, `var` ni `any`. En Chrome DevTools: acceso, bienvenida con enlace, calendario de 31 tarjetas, visita registrada y conservada tras recarga, `firstVisit` inmutable y `lastVisit` actualizado, `/surprise/9` redirigido, `/surprise/32` no encontrada, `/surprise/1` sin acceso redirigido a `/`. Con almacenamiento bloqueado aparece un único aviso y la visita se mantiene solo en memoria. Móvil 390×844 con 4 columnas y escritorio 1280×800 con 8; movimiento reducido sin transición; `forced-colors` con outline sólido de 2px al enfocar con teclado; clases CSS con hash; sin peticiones XHR/fetch; sin mensajes de error en consola.
+
+**Pendiente:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo y despliegue en Vercel. La verificación en Vercel sigue sin ejecutarse.
+
 ## Plantilla para próximas entradas
 
 ```markdown
