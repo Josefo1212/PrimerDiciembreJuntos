@@ -336,6 +336,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** cerrar T6 con la guarda de la ruta de sorpresa en T7; después T8.
 
+## 2026-11-26 — T6 y T7: sorpresa provisional y registro de visitas
+
+**Contexto:** el calendario ya permitía ver estados, pero faltaba abrir un día y conservar la visita.
+
+**Decisiones:** `SurpriseView` usa `parseDayId` e `isDayUnlocked` antes de renderizar. Un identificador inválido muestra la vista de no encontrada; un día futuro redirige al calendario. El efecto de registro se protege con una referencia para no escribir dos veces en el montaje de desarrollo. La ruta queda tras `RequireAccess`, con lo que T6 se cierra.
+
+**Implementación:** `features/surprises/SurpriseView.tsx` y su módulo CSS; ruta `/surprise/:dayId` en `app/router.tsx`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En navegador, con 5/12 simulado: el día 1 abre la sorpresa, guarda `firstVisit` 5/12, el calendario muestra «1 de 31 días visitados» y el día marcado como visitado; al reabrir con 6/12 simulado, `firstVisit` permanece y `lastVisit` cambia. `/surprise/9` redirige sin registro; `/surprise/32` muestra no encontrada; sin acceso, `/surprise/1` redirige a `/`. Tras recargar, el progreso sigue en 1 y solo existe el registro del día 1.
+
+**Pendiente:** T8 de validación integral y cierre de la Spec 003.
+
 ## Plantilla para próximas entradas
 
 ```markdown

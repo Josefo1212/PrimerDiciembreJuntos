@@ -20,12 +20,13 @@
   - Hecho cuando: `/calendar` muestra 31 tarjetas con número, estado por texto/forma/color y progreso «N de 31 días visitados»; navegación por teclado, foco visible y `prefers-reduced-motion` verificados; `pnpm lint` y `pnpm build` terminan correctamente.
   - **Resultado:** `CalendarView`, `CalendarGrid` y `DayCard` con módulos CSS. Se registra `/calendar` en el router para poder validarlo; T6 añadirá la guarda. Con la fecha real (26/11) hay 31 tarjetas bloqueadas, sin enlaces en los días futuros y progreso «0 de 31 días visitados». `Tab` llega directamente a «Volver al inicio». Movimiento reducido se revisa en T8.
 
-- [ ] **T6. Añadir rutas protegidas y el enlace desde la bienvenida.** RF-9, RF-10.
+- [x] **T6. Añadir rutas protegidas y el enlace desde la bienvenida.** RF-9, RF-10.
   - Hecho cuando: `/calendar` y `/surprise/:dayId` están tras `RequireAccess`; sin acceso redirigen a `/`; con acceso válido la bienvenida ofrece «Abrir mi calendario» sin navegar automáticamente; `pnpm lint` y `pnpm build` terminan correctamente.
-  - **Avance:** `RequireAccess` creado y aplicado a `/calendar`; la bienvenida ya ofrece el enlace. Sin acceso, `/calendar` redirige a `/`. Con fecha simulada 5/12 y código válido, el enlace lleva al calendario y muestra 5 días disponibles y 26 bloqueados. La ruta de sorpresa se protege en T7, cuando se crea.
+  - **Resultado:** `RequireAccess` aplicado a `/calendar` y a `/surprise/:dayId`. Sin acceso, ambas rutas redirigen a `/`. Con fecha simulada 5/12 y código válido, el enlace de bienvenida lleva al calendario y muestra 5 días disponibles y 26 bloqueados, sin navegación automática.
 
-- [ ] **T7. Crear la vista provisional de sorpresa y registrar la visita.** RF-5, RF-6, RF-7, RF-8.
+- [x] **T7. Crear la vista provisional de sorpresa y registrar la visita.** RF-5, RF-6, RF-7, RF-8.
   - Hecho cuando: un día desbloqueado muestra contenido provisional e incrementa el progreso; reabrirlo conserva `firstVisit`; un día futuro redirige a `/calendar` sin registrar visita; un identificador inválido muestra la no encontrada; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Resultado:** `SurpriseView` protegida en el router. Con fecha simulada, el día 1 se registra (`firstVisit` 5/12, `lastVisit` 6/12 al reabrir) y el calendario pasa a «1 de 31 días visitados». `/surprise/9` redirige al calendario sin registro; `/surprise/32` muestra la no encontrada; sin acceso, `/surprise/1` redirige a `/`. La recarga conserva la visita.
 
 - [ ] **T8. Validar la spec completa y cerrarla.** Criterios de aceptación.
   - Hecho cuando: se comprueban reglas con Node, acceso y calendario, persistencia y recarga, almacenamiento no disponible, redirecciones, teclado y foco, móvil y escritorio, movimiento reducido, `forced-colors` y ausencia de XHR/fetch; `pnpm lint` y `pnpm build` terminan correctamente; `spec.md`, `AGENTS.md` y `bitacora.md` quedan actualizados.

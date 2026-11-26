@@ -1,0 +1,90 @@
+.page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  background:
+    radial-gradient(circle at 20% 15%, rgba(233, 202, 219, 0.5), transparent 44%),
+    radial-gradient(circle at 80% 85%, rgba(205, 181, 232, 0.45), transparent 46%),
+    var(--lavender-mist);
+}
+
+.card {
+  position: relative;
+  width: min(100%, 30rem);
+  overflow: hidden;
+  padding: clamp(2.25rem, 7vw, 3.5rem);
+  border: 1px solid rgba(205, 181, 232, 0.65);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(81, 64, 100, 0.12);
+  text-align: center;
+}
+
+.eyebrow {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1.25rem;
+  color: var(--dusty-violet);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--deep-plum);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 8vw, 2.9rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.message {
+  position: relative;
+  z-index: 1;
+  margin: 1.25rem auto 0;
+  max-width: 22rem;
+  color: var(--dusty-violet);
+  line-height: 1.7;
+}
+
+.backLink {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  background: var(--dusty-violet);
+  color: var(--surface);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.backLink:hover {
+  background: var(--deep-plum);
+}
+
+.backLink:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(128, 99, 158, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backLink {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .backLink:focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 3px;
+    box-shadow: none;
+  }
+}
