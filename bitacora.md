@@ -502,6 +502,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T3 a T5 de la Spec 006.
 
+## 2026-11-26 — T3: sobre enriquecido
+
+**Contexto:** el sobre anterior era plano y no transmitía la sensación de abrir una carta.
+
+**Decisión:** mantener el motivo pero darle cuerpo físico: papel texturizado, pliegues, sombra, lacre dorado con brillo y una carta que emerge en la bienvenida.
+
+**Implementación:** `CoverMotif.tsx` añade sombra, líneas y fecha en la carta; `CoverMotif.module.css` incorpora las texturas, el lacre dorado y las animaciones `flapRest`, `flapOpen`, `letterOut`, `sealShine` y `sealLift`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. Movimiento reducido y `forced-colors` tienen reglas propias. La revisión visual se completa en T4.
+
+**Pendiente:** T4 y T5 de la Spec 006.
+
 ## Plantilla para próximas entradas
 
 ```markdown

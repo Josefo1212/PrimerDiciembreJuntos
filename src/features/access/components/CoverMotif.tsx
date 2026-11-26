@@ -12,8 +12,12 @@ const CoverMotif = ({ variant }: CoverMotifProps): ReactElement => (
     <span className={styles.halo} />
     <span className={`${styles.sparkle} ${styles.sparkleTop}`} />
     <span className={`${styles.sparkle} ${styles.sparkleBottom}`} />
+    <span className={styles.shadow} />
     <span className={styles.flap} />
-    <span className={styles.letter} />
+    <span className={styles.letter}>
+      <span className={styles.letterLines} />
+      <span className={styles.letterDate}>01 · 12</span>
+    </span>
     <span className={styles.body}>
       <span className={styles.foldLeft} />
       <span className={styles.foldRight} />
