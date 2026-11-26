@@ -128,6 +128,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** validación final y commit por tarea.
 
+## 2026-11-26 — Revalidación posterior al refactor
+
+**Contexto:** el cambio de estructura podía romper imports o alterar el comportamiento de las reglas puras.
+
+**Decisiones:** no se modifica el comportamiento; solo se comprueba que el refactor conserva los resultados acordados.
+
+**Implementación:** sin cambios de código; actualización de tareas y de esta bitácora.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos tras el refactor. Reglas puras compiladas desde `src/features/access/rules/accessRules.ts` y ejecutadas: seis casos en verde. Búsqueda de `function` y `var` en TypeScript sin coincidencias.
+
+**Pendiente:** validación manual en navegador de teclado/foco, móvil/escritorio, `prefers-reduced-motion` y pestaña Network; sustituir `2026` por el código definitivo; aprobar CSS Modules y React Router si se llegan a necesitar.
+
 ## Plantilla para próximas entradas
 
 ```markdown

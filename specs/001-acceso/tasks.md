@@ -28,3 +28,6 @@
 
 - [x] **T9. Refactorizar el acceso a la estructura y estilo de `CONVENTIONS.md`.** Convenciones generales del proyecto; RF-1 a RF-12 sin cambios de comportamiento.
   - Hecho cuando: `App.tsx` vive en `src/app/`; el feature `access` tiene `components/`, `hooks/`, `rules/` y `types.ts`; no hay declaraciones `function` ni `var` en TypeScript; las reglas puras siguen pasando los seis casos; `pnpm lint` y `pnpm build` terminan correctamente.
+
+- [x] **T10. Revalidar reglas puras, lint y build después del refactor.** T9; RF-2, RF-3, RF-8, RF-9, RF-12.
+  - Hecho cuando: los seis casos de reglas puras pasan desde la nueva ruta `rules/accessRules.ts`, y `pnpm lint` y `pnpm build` terminan correctamente tras el cambio de estructura.
