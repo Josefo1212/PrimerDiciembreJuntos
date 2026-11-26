@@ -406,6 +406,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T4 de validación integral y cierre de la Spec 004.
 
+## 2026-11-26 — Spec 004 validada y cerrada
+
+**Contexto:** última tarea de la Spec 004. Se recorrió cada requisito y se comprobó que la herramienta no afecta a la versión desplegada ni al progreso persistido.
+
+**Decisiones:** se considera cerrada la Spec 004. El panel de fecha de prueba es una herramienta exclusiva de desarrollo. `AGENTS.md` refleja el nuevo estado y la decisión confirmada.
+
+**Implementación:** sin cambios de código; actualización de `spec.md`, `tasks.md`, `AGENTS.md` y esta bitácora.
+
+**Validación:** 22/22 reglas de calendario y 15/15 reglas de fecha de prueba con Node; `pnpm lint` y `pnpm build` correctos; sin `function`, `var` ni `any`. En desarrollo, al aplicar 5/12/2026 los días 1–5 quedan desbloqueados, el día 2 abre su sorpresa y su `firstVisit` conserva la fecha real 26/11/2026; la fecha simulada sobrevive a recarga y se elimina con «Usar fecha real». En `pnpm preview`, sin panel y con `previewDate` manipulado en sesión, el calendario sigue con 31 días bloqueados. `dist` no contiene «Fecha de prueba», «Aplicar fecha», «Usar fecha real» ni la clave `previewDate`. Sin peticiones XHR/fetch ni errores de consola. Móvil 390×844 sin desbordamiento y 4 columnas; movimiento reducido sin transiciones; `forced-colors` con outline sólido de 2px al enfocar el selector con teclado.
+
+**Pendiente:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo. La verificación en Vercel del deploy corregido queda registrada como correcta por el usuario, sin nueva ejecución local.
+
 ## Plantilla para próximas entradas
 
 ```markdown

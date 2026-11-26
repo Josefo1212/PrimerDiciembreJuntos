@@ -17,7 +17,7 @@ No se usa subtítulo. El nombre no lleva sufijos de edición o variante.
 
 El proyecto está en etapa de definición y preparación. Los documentos de referencia de Civik se usaron únicamente como modelo de estructura, profundidad y disciplina documental; sus decisiones de backend, Rust, PostgreSQL, hexagonalidad, auditoría y despliegue no se trasladan a este proyecto.
 
-**Estado:** bootstrap ejecutado; Specs 001 de acceso, 002 de navegación y estilos, y 003 de calendario y progreso implementadas y validadas en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm + React Router 8 + CSS Modules + Dexie). Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados: el contenido actual es provisional.
+**Estado:** bootstrap ejecutado; Specs 001 de acceso, 002 de navegación y estilos, 003 de calendario y progreso, y 004 de fecha de prueba implementadas y validadas en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm + React Router 8 + CSS Modules + Dexie). El despliegue en Vercel quedó corregido con `outputDirectory: "dist"`. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados: el contenido actual es provisional.
 
 ### Decisiones confirmadas
 
@@ -31,6 +31,7 @@ El proyecto está en etapa de definición y preparación. Los documentos de refe
 - El contenido estático de las sorpresas forma parte del bundle o de los assets estáticos. No se almacena en IndexedDB.
 - El código de acceso, si se implementa, será una barrera de experiencia local, no autenticación ni seguridad real.
 - La fecha del dispositivo puede modificarse; no se implementará una verificación de fecha confiable desde servidor.
+- Durante el desarrollo existe un panel para simular la fecha local; afecta solo al desbloqueo, se guarda en la sesión de la pestaña, no toca las visitas persistidas y no se incluye en producción.
 - Dirección visual: elegante, romántica y personal, con lavanda/lila como color protagonista y una estética Liquid Glass moderada.
 - Diseño mobile-first, adaptable a escritorio, con respeto por `prefers-reduced-motion`.
 - El audio no se reproduce automáticamente.

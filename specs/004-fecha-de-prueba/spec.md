@@ -1,6 +1,6 @@
 # Spec 004 — Fecha de prueba para desarrollo
 
-Estado: **aprobada** el 26/11/2026.
+Estado: **implementada y validada** el 26/11/2026.
 
 ## Contexto y objetivo
 
