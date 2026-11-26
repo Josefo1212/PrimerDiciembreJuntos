@@ -630,6 +630,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente general:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo; revisar `NotFoundView` si se quiere la misma noche también en rutas inválidas.
 
+## 2026-11-26 — Spec 010: Not found nocturno implementado y validado
+
+**Contexto:** quedaba pendiente alinear `NotFoundView`, que todavía usaba la paleta clara y no tenía foco visible ni reglas de `forced-colors`.
+
+**Decisión:** Spec 010 aprobada. Aplicar la misma noche sin tocar textos, rutas ni control de acceso; un único cambio de CSS.
+
+**Implementación:** `NotFoundView.module.css` adopta fondo plum/lila con halo, tarjeta glass oscura, texto Warm Ivory, eyebrow y enlace dorados. Añade halo de foco dorado, `prefers-reduced-motion` y `forced-colors`.
+
+**Validación:** `/no-existe` en navegación directa y `/surprise/abc` por navegación interna muestran la misma gama. Sin desbordamiento a 390×844 ni a 1280×800, tarjeta centrada, foco visible, `forced-colors` y movimiento reducido comprobados. Consola sin errores y peticiones solo locales. `pnpm lint` y `pnpm build` correctos.
+
+**Estado:** todas las vistas implementadas hasta ahora comparten la gama nocturna. Queda pendiente el contenido y formato de los 31 días, las rutas `/memories` y `/finale`, y el código de acceso definitivo.
+
 ## Plantilla para próximas entradas
 
 ```markdown
