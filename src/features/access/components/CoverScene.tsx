@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from 'react'
-import type { CoverMotifVariant } from './CoverMotif.tsx'
-import CoverMotif from './CoverMotif.tsx'
+import type { MoonPhase } from './MoonMotif.tsx'
+import MoonMotif from './MoonMotif.tsx'
 import styles from './CoverScene.module.css'
 
 type CoverSceneProps = {
@@ -11,7 +11,7 @@ type CoverSceneProps = {
   lead: string
   handwritten: string
   dayMark: string
-  variant: CoverMotifVariant
+  phase: MoonPhase
   panelEyebrow: string
   panelTitle: string
   note?: string
@@ -28,7 +28,7 @@ const CoverScene = ({
   lead,
   handwritten,
   dayMark,
-  variant,
+  phase,
   panelEyebrow,
   panelTitle,
   note,
@@ -58,7 +58,7 @@ const CoverScene = ({
 
       <div className={styles.panel}>
         <div className={styles.motifWrap}>
-          <CoverMotif variant={variant} />
+          <MoonMotif phase={phase} />
         </div>
         <div className={styles.panelContent}>
           <p className={styles.panelEyebrow}>{panelEyebrow}</p>

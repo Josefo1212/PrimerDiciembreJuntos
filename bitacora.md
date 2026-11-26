@@ -538,6 +538,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente general:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo; validación visual de la Spec 006.
 
+## 2026-11-26 — Spec 007: portada de luna y estrellas, T1 y T2
+
+**Contexto:** el usuario rechazó el sobre de la Spec 006. Respondió a la clarificación: quiere luna y estrellas, conservar la noche y que el movimiento sea elegante y contenido.
+
+**Decisiones:** Spec 007 aprobada. Se elimina el sobre y sus textos; se mantiene la escena nocturna y se usan CSS/Web Animations sin Framer Motion. No cambian código de acceso, rutas ni persistencia.
+
+**Implementación:** `MoonMotif` con fases `crescent` y `full`; eliminación de `CoverMotif`; `CoverScene` cambia `variant` por `phase`; vistas y textos adaptados a noche/luna. Las dos tareas se entregan en el mismo cambio porque el contrato compartido y las vistas tenían que actualizarse a la vez para mantener un build válido.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. `grep` no encuentra referencias al sobre en `src`. Queda pendiente la comprobación visual en navegador.
+
+**Pendiente:** T3 y T4 de la Spec 007.
+
 ## Plantilla para próximas entradas
 
 ```markdown

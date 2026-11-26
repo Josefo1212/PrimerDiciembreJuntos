@@ -10,10 +10,10 @@ const WelcomeView = (): ReactElement => (
     title="Bienvenida,"
     titleAccent="Isabela"
     lead="Tu diciembre empieza aquí. Pronto, cada día tendrá algo especialmente para ti."
-    handwritten="Este sobre ya es tuyo."
+    handwritten="Esta noche es tuya."
     dayMark="01"
-    variant="open"
-    panelEyebrow="Sobre abierto"
+    phase="full"
+    panelEyebrow="La luna está contigo"
     panelTitle="Empieza la cuenta atrás"
     note="Treinta y una sorpresas te están esperando."
   >

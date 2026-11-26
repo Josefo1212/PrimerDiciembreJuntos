@@ -1,0 +1,154 @@
+.motif {
+  --motif-size: clamp(9rem, 28vw, 13rem);
+
+  position: relative;
+  display: grid;
+  width: var(--motif-size);
+  aspect-ratio: 1;
+  place-items: center;
+  isolation: isolate;
+}
+
+.glow {
+  position: absolute;
+  z-index: -1;
+  inset: -38%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(228, 199, 131, 0.2), rgba(169, 139, 203, 0.16) 46%, transparent 70%);
+  filter: blur(18px);
+  animation: moonGlow 10s ease-in-out infinite alternate;
+}
+
+.orbit {
+  position: absolute;
+  width: 88%;
+  height: 36%;
+  border: 1px solid rgba(205, 181, 232, 0.32);
+  border-radius: 50%;
+  transform: rotate(-22deg);
+  z-index: 1;
+  animation: orbitSpin 22s linear infinite;
+}
+
+.orbit::after {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  box-shadow: 0 0 12px rgba(228, 199, 131, 0.85);
+  content: '';
+}
+
+.crescent .orbit {
+  display: none;
+}
+
+.moon {
+  position: relative;
+  width: 64%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid rgba(246, 238, 223, 0.32);
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 26%, #fffaf0, var(--warm-ivory) 44%, #c9b6d8 78%, #9b86b8 100%);
+  box-shadow:
+    inset -12px -14px 28px rgba(81, 64, 100, 0.3),
+    0 0 42px rgba(246, 238, 223, 0.24);
+  z-index: 2;
+  animation: moonFloat 9s ease-in-out infinite alternate;
+}
+
+.crescent .moon {
+  -webkit-mask-image: radial-gradient(circle at 74% 26%, transparent 0 48%, #000 49%);
+  mask-image: radial-gradient(circle at 74% 26%, transparent 0 48%, #000 49%);
+}
+
+.craters {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 28% 36%, rgba(128, 99, 158, 0.16) 0 6%, transparent 7%),
+    radial-gradient(circle at 58% 58%, rgba(128, 99, 158, 0.12) 0 9%, transparent 10%),
+    radial-gradient(circle at 36% 72%, rgba(128, 99, 158, 0.1) 0 5%, transparent 6%);
+}
+
+.sparkle {
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--gold-light);
+  box-shadow: 0 0 10px rgba(228, 199, 131, 0.8);
+  animation: sparkleTwinkle 5s ease-in-out infinite;
+}
+
+.sparkleOne {
+  top: 12%;
+  right: 8%;
+}
+
+.sparkleTwo {
+  bottom: 14%;
+  left: 6%;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: var(--blush-pink);
+  box-shadow: 0 0 10px rgba(233, 202, 219, 0.7);
+  animation-delay: -2.4s;
+}
+
+@keyframes moonGlow {
+  from { opacity: 0.6; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes moonFloat {
+  from { transform: translateY(3px); }
+  to { transform: translateY(-4px); }
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(-22deg); }
+  to { transform: rotate(338deg); }
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow,
+  .moon,
+  .orbit,
+  .sparkle {
+    animation: none;
+  }
+
+  .orbit {
+    transform: rotate(-22deg);
+  }
+}
+
+@media (forced-colors: active) {
+  .moon,
+  .orbit {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    forced-color-adjust: none;
+  }
+
+  .crescent .moon {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .sparkle,
+  .orbit::after {
+    background: CanvasText;
+    box-shadow: none;
+  }
+}

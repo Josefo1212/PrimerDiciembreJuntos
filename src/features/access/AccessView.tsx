@@ -11,9 +11,9 @@ const AccessView = (): ReactElement => (
     lead="Treinta y un días, una invitación y algo preparado solo para ti."
     handwritten="Para ti, Isabela"
     dayMark="31"
-    variant="closed"
-    panelEyebrow="Tu sobre está cerrado"
-    panelTitle="Ábrelo con el código"
+    phase="crescent"
+    panelEyebrow="La noche te espera"
+    panelTitle="Descubre tu diciembre"
   >
     <AccessForm />
   </CoverScene>
