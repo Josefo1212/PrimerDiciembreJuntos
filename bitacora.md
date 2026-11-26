@@ -116,6 +116,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** aplicar las convenciones al código existente y hacer un commit por tarea.
 
+## 2026-11-26 — Refactor según convenciones
+
+**Contexto:** el código inicial funcionaba, pero no seguía la estructura ni el estilo exigidos por `CONVENTIONS.md`.
+
+**Decisiones:** `App.tsx` se movió a `src/app/`; el feature `access` se dividió en `components/`, `hooks/`, `rules/` y `types.ts`; la lógica del formulario pasó al hook `useAccessForm`; las reglas puras son funciones flecha; se eliminaron declaraciones `function`.
+
+**Implementación:** archivos nuevos `types.ts`, `rules/accessRules.ts`, `hooks/useAccessForm.ts`, `components/AccessForm.tsx/.css`; `AccessView`, `WelcomeView`, `App` y `main.tsx` reescritos con sintaxis moderna. Se eliminaron los archivos antiguos `src/App.tsx` y `src/features/access/accessRules.ts`. Sin cambios de comportamiento.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos; búsqueda de `function` y `var` en TypeScript sin coincidencias. Las reglas puras se volverán a ejecutar en la siguiente tarea de validación.
+
+**Pendiente:** validación final y commit por tarea.
+
 ## Plantilla para próximas entradas
 
 ```markdown

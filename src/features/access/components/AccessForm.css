@@ -1,0 +1,79 @@
+.accessForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  text-align: left;
+}
+
+.accessForm__label {
+  color: var(--deep-plum);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.accessForm__input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--pastel-lilac);
+  border-radius: 16px;
+  background: var(--lavender-mist);
+  color: var(--deep-plum);
+  font-size: 1.35rem;
+  letter-spacing: 0.3em;
+  text-align: center;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.accessForm__input:hover {
+  border-color: var(--lavender);
+}
+
+.accessForm__input:focus-visible {
+  border-color: var(--dusty-violet);
+}
+
+.accessForm__input[aria-invalid='true'] {
+  border-color: var(--dusty-violet);
+  background: var(--warm-ivory);
+}
+
+.accessForm__error {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  border-left: 3px solid var(--dusty-violet);
+  border-radius: 12px;
+  background: var(--blush-pink);
+  color: var(--deep-plum);
+  font-size: 0.92rem;
+}
+
+.accessForm__errorMark {
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: none;
+  border: 2px solid var(--dusty-violet);
+  border-radius: 50%;
+}
+
+.accessForm__button {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--dusty-violet);
+  color: var(--surface);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.accessForm__button:hover {
+  background: var(--deep-plum);
+}
+
+.accessForm__button:active {
+  transform: translateY(1px);
+}

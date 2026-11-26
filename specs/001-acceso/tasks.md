@@ -23,5 +23,8 @@
   - **Avance real:** `pnpm lint` y `pnpm build` terminaron correctamente; las reglas puras se compilaron y ejecutaron con los seis casos de aceptación en verde; no hay `fetch`, almacenamiento ni dependencias nuevas en `src/`.
   - **Pendiente:** recorrido manual en navegador de foco/teclado, móvil/escritorio, `prefers-reduced-motion` y pestaña Network.
 
-- [ ] **T8. Documentar y aplicar las convenciones de código aprobadas.** Convenciones generales del proyecto.
+- [x] **T8. Documentar y aplicar las convenciones de código aprobadas.** Convenciones generales del proyecto.
   - Hecho cuando: existe `CONVENTIONS.md` con funciones flecha obligatorias, sintaxis moderna, estructura feature-based, hooks/reglas separados y commit por tarea; `AGENTS.md`, `constitution.md` y `SKILL.md` la referencian; el código existente cumple las reglas y cada tarea tiene su commit.
+
+- [x] **T9. Refactorizar el acceso a la estructura y estilo de `CONVENTIONS.md`.** Convenciones generales del proyecto; RF-1 a RF-12 sin cambios de comportamiento.
+  - Hecho cuando: `App.tsx` vive en `src/app/`; el feature `access` tiene `components/`, `hooks/`, `rules/` y `types.ts`; no hay declaraciones `function` ni `var` en TypeScript; las reglas puras siguen pasando los seis casos; `pnpm lint` y `pnpm build` terminan correctamente.
