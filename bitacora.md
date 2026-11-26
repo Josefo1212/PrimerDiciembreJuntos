@@ -276,6 +276,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T2 a T8 de la Spec 003.
 
+## 2026-11-26 — T2: reglas puras de fecha y estado
+
+**Contexto:** el desbloqueo debe poder comprobarse sin navegador y no debe vivir en los componentes.
+
+**Decisión:** las reglas se implementan con componentes de fecha local (`getFullYear`, `getMonth`, `getDate`) y una clave `año * 100 + mes`. Se añade `parseDayId` para validar el parámetro de la ruta. El script de casos usa Node 26 con type stripping, sin añadir Vitest.
+
+**Implementación:** `features/calendar/types.ts`, `rules/dateRules.ts` y `rules/dateRules.check.ts`. Las importaciones entre módulos incluyen la extensión `.ts` para que Node pueda resolverlas.
+
+**Validación:** 22/22 casos correctos; cubre 30/11, 1/12, 5/12, 31/12, 1/1/2027, 31/12/2025, identificadores inválidos y estados con/sin visita. `pnpm lint` y `pnpm build` correctos.
+
+**Pendiente:** T3 a T8 de la Spec 003.
+
 ## Plantilla para próximas entradas
 
 ```markdown

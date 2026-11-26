@@ -4,8 +4,9 @@
   - Hecho cuando: `package.json` declara `dexie`, `pnpm-lock.yaml` está actualizado y `pnpm build` termina correctamente.
   - **Resultado:** `dexie@4.4.7` instalado; build correcto. Sin cambios de código todavía.
 
-- [ ] **T2. Implementar y comprobar las reglas puras de fecha y estado.** RF-1, RF-2, RF-3, RF-4.
+- [x] **T2. Implementar y comprobar las reglas puras de fecha y estado.** RF-1, RF-2, RF-3, RF-4.
   - Hecho cuando: `dateRules.ts` expone `isValidDayId`, `isDayUnlocked` y `getDayStatus` sin React ni DOM; el script de casos con Node comprueba 30/11, 1/12, 5/12, 31/12, 1/1/2027, identificadores inválidos y día visitado; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Resultado:** 22/22 casos correctos con Node 26; `parseDayId` añadido para la ruta; lint y build correctos.
 
 - [ ] **T3. Definir el esquema de Dexie y encapsular el acceso a IndexedDB.** RF-12, RF-6.
   - Hecho cuando: `db.ts` declara la versión 1 con `dayProgress: 'dayId'`; `progress.ts` expone lectura de visitas y registro de visita con transacción que conserva `firstVisit`; ninguna vista importa Dexie; `pnpm lint` y `pnpm build` terminan correctamente.
