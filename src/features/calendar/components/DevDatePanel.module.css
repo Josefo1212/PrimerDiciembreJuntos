@@ -5,13 +5,15 @@
   gap: 0.6rem;
   margin: 0 0 1.5rem;
   padding: 0.8rem 1rem;
-  border: 1px dashed var(--lavender);
+  border: 1px solid rgba(205, 181, 232, 0.35);
   border-radius: 16px;
-  background: var(--warm-ivory);
+  background: rgba(46, 34, 64, 0.7);
+  backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .label {
-  color: var(--deep-plum);
+  color: var(--warm-ivory);
   font-size: 0.8rem;
   font-weight: 600;
 }
@@ -27,53 +29,87 @@
 
 .input {
   padding: 0 0.75rem;
-  border: 1px solid var(--pastel-lilac);
-  background: var(--surface);
-  color: var(--deep-plum);
+  border: 1px solid rgba(205, 181, 232, 0.42);
+  background: rgba(15, 10, 22, 0.58);
+  color: var(--warm-ivory);
+  color-scheme: dark;
 }
 
 .button,
 .secondaryButton {
   padding: 0 1rem;
   cursor: pointer;
+  transition: filter 180ms ease, background-color 180ms ease;
 }
 
 .button {
-  border: 1px solid var(--dusty-violet);
-  background: var(--dusty-violet);
-  color: var(--surface);
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #24182f;
+  font-weight: 700;
 }
 
 .secondaryButton {
-  border: 1px solid var(--pastel-lilac);
+  border: 1px solid rgba(228, 199, 131, 0.5);
   background: transparent;
-  color: var(--dusty-violet);
+  color: var(--gold-light);
 }
 
 .button:hover {
-  background: var(--deep-plum);
+  filter: brightness(1.07);
 }
 
 .secondaryButton:hover {
-  background: var(--soft-lilac);
+  background: rgba(201, 164, 92, 0.14);
 }
 
 .input:focus-visible,
 .button:focus-visible,
 .secondaryButton:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(128, 99, 158, 0.24);
+  box-shadow: 0 0 0 3px rgba(228, 199, 131, 0.38);
 }
 
 .status {
   flex-basis: 100%;
   margin: 0;
-  color: var(--dusty-violet);
+  color: rgba(246, 238, 223, 0.78);
   font-size: 0.8rem;
   line-height: 1.45;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .secondaryButton {
+    transition: none;
+  }
+}
+
 @media (forced-colors: active) {
+  .panel {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    backdrop-filter: none;
+  }
+
+  .label,
+  .status {
+    color: CanvasText;
+  }
+
+  .input {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .button,
+  .secondaryButton {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+
   .input:focus-visible,
   .button:focus-visible,
   .secondaryButton:focus-visible {

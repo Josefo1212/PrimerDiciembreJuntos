@@ -598,6 +598,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T3 y T4 de la Spec 008.
 
+## 2026-11-26 — T3: panel de fecha de prueba nocturno
+
+**Contexto:** el panel de desarrollo y la advertencia de almacenamiento debían integrarse en la misma escena sin perder legibilidad.
+
+**Decisión:** reutilizar la superficie glass, el campo oscuro y el botón dorado ya usados en la portada, sin tocar la lógica del panel ni su condición de desarrollo.
+
+**Implementación:** `DevDatePanel.module.css` adopta fondo plum/lila, `color-scheme: dark`, acciones doradas y foco dorado; añade reglas de movimiento reducido y `forced-colors`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos.
+
+**Pendiente:** T4 de validación en navegador y cierre de la Spec 008.
+
 ## Plantilla para próximas entradas
 
 ```markdown
