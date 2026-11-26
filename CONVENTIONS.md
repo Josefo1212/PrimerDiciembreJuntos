@@ -65,7 +65,7 @@ src/
 - Accesibilidad desde el inicio: etiquetas, `aria-*`, foco visible, mensajes anunciables y navegación por teclado.
 - No depender solo del color para comunicar estado.
 - No reproducir multimedia automáticamente.
-- Las rutas se definen en `src/app/router.tsx` con `createBrowserRouter` y `RouterProvider`. El estado de acceso se provee por Context y las rutas protegidas redirigen con `<Navigate to="/" replace />`.
+- Las rutas se definen en `src/app/router.tsx` con `createBrowserRouter` (desde `react-router`) y `RouterProvider` (desde `react-router/dom`, API de v8). El estado de acceso se provee por Context y las rutas protegidas redirigen con `<Navigate to="/" replace />`.
 - No crear rutas ni pantallas de funcionalidades cuyas specs no estén aprobadas.
 
 ## Estilos

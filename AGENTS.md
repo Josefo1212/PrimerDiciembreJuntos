@@ -17,7 +17,7 @@ No se usa subtítulo. El nombre no lleva sufijos de edición o variante.
 
 El proyecto está en etapa de definición y preparación. Los documentos de referencia de Civik se usaron únicamente como modelo de estructura, profundidad y disciplina documental; sus decisiones de backend, Rust, PostgreSQL, hexagonalidad, auditoría y despliegue no se trasladan a este proyecto.
 
-**Estado:** bootstrap ejecutado y Spec 001 de acceso implementada y validada en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm). El 26/11/2026 se aprobaron React Router 7 y CSS Modules; su instalación y migración siguen pendientes. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados.
+**Estado:** bootstrap ejecutado y Spec 001 de acceso implementada y validada en navegador el 26/11/2026 (React 19 + TypeScript + Vite + pnpm). El 26/11/2026 se aprobaron React Router 8 y CSS Modules; React Router 8 ya está instalado y la migración a rutas y módulos CSS sigue pendiente. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados.
 
 ### Decisiones confirmadas
 
@@ -34,7 +34,7 @@ El proyecto está en etapa de definición y preparación. Los documentos de refe
 - Dirección visual: elegante, romántica y personal, con lavanda/lila como color protagonista y una estética Liquid Glass moderada.
 - Diseño mobile-first, adaptable a escritorio, con respeto por `prefers-reduced-motion`.
 - El audio no se reproduce automáticamente.
-- React Router 7 para rutas reales, aprobado el 26/11/2026.
+- React Router 8 para rutas reales, aprobado el 26/11/2026.
 - CSS Modules para estilos de componentes, aprobado el 26/11/2026.
 
 ### Decisiones propuestas o pendientes de aprobación
@@ -63,7 +63,7 @@ React 19
 TypeScript (strict)
 Vite
 pnpm
-React Router 7 (paquete `react-router`) — aprobado 26/11/2026
+React Router 8 (paquete `react-router`) — aprobado 26/11/2026
 Framer Motion
 Lucide React
 Dexie.js (IndexedDB)
@@ -255,7 +255,7 @@ El orden definitivo se aprueba fase por fase mediante SDD.
 
 1. **Bootstrap y base visual:** crear proyecto, configurar TypeScript, scripts, estructura mínima, estilos globales y tokens.
 2. **Welcome / Access:** construir bienvenida y resolver el comportamiento del código local, si se mantiene.
-3. **Base de navegación y estilos:** instalar React Router 7, migrar a CSS Modules y configurar el rewrite de Vercel.
+3. **Base de navegación y estilos:** instalar React Router 8, migrar a CSS Modules y configurar el rewrite de Vercel.
 4. **Calendario:** cuadrícula de 31 días, estados visuales y navegación.
 5. **Persistencia y fechas:** IndexedDB, progreso, desbloqueo por fecha y casos de error.
 6. **Motor de sorpresas:** modelo de contenido y renderizado de los tipos aprobados.
@@ -273,7 +273,7 @@ pnpm install
 pnpm dev
 ```
 
-Después se renombraron la carpeta a `primerDiciembreJuntos` y el paquete a `primer-diciembre-juntos`. React Router 7 y CSS Modules están aprobados; el resto de dependencias siguen pendientes.
+Después se renombraron la carpeta a `primerDiciembreJuntos` y el paquete a `primer-diciembre-juntos`. React Router 8 y CSS Modules están aprobados; el resto de dependencias siguen pendientes.
 
 Dependencias posteriores, solo cuando la fase correspondiente esté aprobada:
 

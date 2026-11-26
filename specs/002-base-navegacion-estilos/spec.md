@@ -4,7 +4,7 @@ Estado: **propuesta**, pendiente de aprobación.
 
 ## Contexto y objetivo
 
-La Spec 001 validó el acceso con navegación por estado local y CSS global. El 26/11/2026 se aprobaron React Router 7 y CSS Modules. Antes de construir el calendario conviene dejar esa base instalada y migrada, para no crear componentes sobre una arquitectura que luego habría que rehacer.
+La Spec 001 validó el acceso con navegación por estado local y CSS global. El 26/11/2026 se aprobaron React Router 8 y CSS Modules. Antes de construir el calendario conviene dejar esa base instalada y migrada, para no crear componentes sobre una arquitectura que luego habría que rehacer.
 
 El objetivo es establecer rutas reales, estilos con scope local y el despliegue SPA en Vercel, conservando exactamente el comportamiento ya aprobado de la Spec 001.
 
@@ -40,7 +40,7 @@ El objetivo es establecer rutas reales, estilos con scope local y el despliegue 
 
 ## Requisitos no funcionales
 
-- Única dependencia nueva: `react-router` en su versión 7. CSS Modules no añade dependencias porque Vite lo soporta de forma nativa.
+- Única dependencia nueva: `react-router` en su versión 8. CSS Modules no añade dependencias porque Vite lo soporta de forma nativa.
 - `tsconfig.app.json` ya incluye `vite/client`, por lo que los tipos de los módulos CSS están disponibles sin declaraciones adicionales.
 - Se mantienen la paleta de `PALETA.md`, el diseño mobile-first, `prefers-reduced-motion`, el foco diseñado y el fallback de `forced-colors`.
 - No se añade persistencia: el acceso sigue vivo solo en memoria.
@@ -70,7 +70,7 @@ El objetivo es establecer rutas reales, estilos con scope local y el despliegue 
 
 ## Criterios de aceptación
 
-- `react-router` está instalado y `pnpm-lock.yaml` refleja la versión 7.
+- `react-router` está instalado y `pnpm-lock.yaml` refleja la versión 8.
 - `src/app/router.tsx` existe y contiene `/` más una ruta comodín; no hay rutas de vistas no aprobadas.
 - Al abrir `/` aparece el acceso; con `2026` aparece la bienvenida; al recargar vuelve el acceso.
 - Los mensajes de error, reintentos, teclado y foco siguen funcionando como en la Spec 001.
@@ -82,7 +82,7 @@ El objetivo es establecer rutas reales, estilos con scope local y el despliegue 
 
 ## Decisiones cerradas (26/11/2026)
 
-- React Router 7 en modo librería: `createBrowserRouter` + `RouterProvider`.
+- React Router 8 en modo librería: `createBrowserRouter` + `RouterProvider`.
 - El estado de acceso pasa de `App.tsx` a un provider en `app/providers/` con un hook en `features/access/hooks/`.
 - CSS Modules con nomenclatura `Componente.module.css`; globales solo `index.css` y `design-system/`.
 - Rewrite SPA en `vercel.json` con `/(.*)` → `/index.html`.

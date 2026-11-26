@@ -8,7 +8,7 @@ Sustituir la navegación por estado local por un router real y migrar los estilo
 
 | Archivo | Responsabilidad |
 | --- | --- |
-| `package.json`, `pnpm-lock.yaml` | Nueva dependencia `react-router` en versión 7. |
+| `package.json`, `pnpm-lock.yaml` | Nueva dependencia `react-router` en versión 8. |
 | `src/app/router.tsx` | Definición única de rutas con `createBrowserRouter`. |
 | `src/app/providers/AccessProvider.tsx` | Context con el estado `locked | unlocked`. |
 | `src/app/App.tsx` | Monta `RouterProvider` y `AccessProvider`. |
@@ -61,7 +61,7 @@ No se registra `/calendar`, `/surprise/:dayId`, `/memories` ni `/finale`: sus sp
 
 ## Decisiones técnicas
 
-- **Router en modo librería:** suficiente para una SPA estática; no se activa el modo framework ni loaders.
+- **Router en modo librería:** suficiente para una SPA estática; no se activa el modo framework ni loaders. En v8, `createBrowserRouter` se importa desde `react-router` y `RouterProvider` desde `react-router/dom`.
 - **Context de acceso:** sustituye al prop `onSuccess` para que el estado no dependa del árbol de props. Alternativa descartada: seguir pasando props y añadir rutas protegidas sin provider.
 - **Sin persistencia:** RF-4 de la Spec 001 y RF-4 de esta spec exigen que la recarga vuelva al acceso.
 - **Sin pruebas automatizadas nuevas:** se mantiene la validación con lint, build y Chrome DevTools; Vitest sigue sin aprobación.

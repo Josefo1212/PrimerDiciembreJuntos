@@ -1,7 +1,8 @@
 # Tareas 002 — Base de navegación y estilos
 
-- [ ] **T1. Instalar `react-router` en versión 7 y verificar el lockfile.** RF-1.
-  - Hecho cuando: `package.json` declara `react-router` con versión 7, `pnpm-lock.yaml` está actualizado y `pnpm build` termina correctamente.
+- [x] **T1. Instalar `react-router` en versión 8 y verificar el lockfile.** RF-1.
+  - Hecho cuando: `package.json` declara `react-router` con versión 8, `pnpm-lock.yaml` está actualizado y `pnpm build` termina correctamente.
+  - **Resultado:** `react-router@8.5.3` instalado y build correcto. El usuario confirmó que usara la versión 8 descargada por pnpm.
 
 - [ ] **T2. Migrar los estilos del feature `access` a CSS Modules.** RF-8, RF-9.
   - Hecho cuando: `AccessView.css`, `WelcomeView.css` y `AccessForm.css` pasan a `*.module.css`; los componentes consumen `styles.nombreClase`; no quedan selectores globales nuevos; `pnpm lint` y `pnpm build` terminan correctamente.
