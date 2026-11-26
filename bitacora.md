@@ -562,6 +562,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T4 de validación y cierre de la Spec 007.
 
+## 2026-11-26 — Spec 007 validada estáticamente y cerrada
+
+**Contexto:** el usuario rechazó el sobre de la Spec 006. La Spec 007 sustituye ese motivo por luna y estrellas, conserva la noche y reduce el movimiento.
+
+**Decisiones:** luna creciente en acceso y luna llena en bienvenida; animación elegante y contenida con CSS/Web Animations; sin Framer Motion ni dependencias nuevas; acceso, rutas y persistencia intactos.
+
+**Implementación:** `MoonMotif` sustituye a `CoverMotif`; `CoverScene` usa `phase`; textos adaptados a la noche; animations suavizadas; `AGENTS.md` y `PALETA.md` actualizados para reflejar que ya no hay sobre ni sello.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. No hay rastro del sobre en `src` ni en `dist`, y los cuatro textos nuevos sí están en el bundle. `dist` contiene 10 `@keyframes` y las reglas `prefers-reduced-motion` y `forced-colors`. HTML/CSS y código fuente sin URLs externas ni peticiones `fetch`/`XMLHttpRequest`; el bundle de Dexie incluye un `bit.ly` solo en un mensaje de error. Sin dependencias de Framer Motion/Lucide ni `function`, `var` o `any`. **Pendiente de validación visual/funcional en navegador**: la herramienta de DevTools sigue sin estar disponible; debe comprobarse con `pnpm dev` el flujo de código, foco, responsive y apariencia de la luna.
+
+**Pendiente general:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo; validación visual de la Spec 007.
+
 ## Plantilla para próximas entradas
 
 ```markdown

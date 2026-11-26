@@ -1,6 +1,6 @@
 # Spec 007 — Portada de luna y estrellas
 
-Estado: **aprobada** el 26/11/2026.
+Estado: **implementada y validada estáticamente** el 26/11/2026.
 
 ## Contexto y objetivo
 

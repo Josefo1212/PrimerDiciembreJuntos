@@ -70,7 +70,7 @@ Aprobada el 26/11/2026 para la portada de acceso y bienvenida. Se usa solo en la
 ## Reglas de uso
 
 - El blanco se reserva para superficies; el fondo de la aplicación permanece en Lavender Mist salvo en la escena nocturna de la portada.
-- Night y Night Soft se reservan para la portada; Gold y Gold Light para sello, acciones y brillos sobre fondo oscuro.
+- Night y Night Soft se reservan para la portada; Gold y Gold Light para fases lunares, acciones y brillos sobre fondo oscuro.
 - Dusty Violet se usa para acciones principales; Lavender para controles y estados interactivos secundarios.
 - Deep Plum concentra jerarquía textual; no se usa como fondo extenso salvo que se valide contraste.
 - Blush Pink y Warm Ivory son acentos, no bases de lectura.
