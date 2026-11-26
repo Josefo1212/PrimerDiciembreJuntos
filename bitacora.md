@@ -454,6 +454,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T4 y T5 de la Spec 005.
 
+## 2026-11-26 — T4: portada de bienvenida
+
+**Contexto:** la bienvenida debía continuar la narrativa del sobre cerrado del acceso.
+
+**Decisión:** misma estructura de dos zonas, con el sobre abierto y un CTA protagonista. La nota manuscrita es decorativa y nunca sustituye al mensaje principal.
+
+**Implementación:** `WelcomeView.tsx` y su CSS Module reescritos con motivo abierto, nota Caveat y enlace de ancho completo. Se conservan la ruta y el texto esencial.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En 390×844 no hay desbordamiento, panel de 350 px y enlace de 51 px; con movimiento reducido no hay transición. Con `forced-colors`, el enlace recibe foco con outline sólido de 2 px.
+
+**Pendiente:** T5 de validación integral y cierre de la Spec 005.
+
 ## Plantilla para próximas entradas
 
 ```markdown
