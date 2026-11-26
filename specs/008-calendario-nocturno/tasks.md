@@ -12,5 +12,6 @@
   - Hecho cuando: `DevDatePanel.module.css` y la advertencia de almacenamiento usan la misma gama sin perder contraste ni foco; el panel sigue siendo solo de desarrollo; `pnpm lint` y `pnpm build` terminan correctamente.
   - **Resultado:** el panel de fecha usa superficie glass nocturna, campo oscuro con `color-scheme: dark`, botón principal dorado y botón secundario outline dorado. La advertencia ya quedó adaptada en T1. Se añaden halo de foco dorado, movimiento reducido y `forced-colors`. La lógica y la condición `import.meta.env.DEV` no se tocan. `pnpm lint` y `pnpm build` correctos.
 
-- [ ] **T4. Validar en navegador y cerrar la spec.** RF-1 a RF-7.
+- [x] **T4. Validar en navegador y cerrar la spec.** RF-1 a RF-7.
   - Hecho cuando: se comprueba el flujo real de acceso, los estados de los días, móvil/escritorio, teclado, `forced-colors`, movimiento reducido, consola y peticiones; `pnpm lint` y `pnpm build` terminan correctamente y la documentación queda actualizada.
+  - **Resultado:** flujo `2026` → bienvenida → calendario verificado con fecha de prueba `2026-12-05`. A 390×844 `scrollWidth = 390` y a 1280×800 la cuadrícula usa 8 columnas sin desbordamiento. Los tres estados conservan etiqueta y símbolo; el fondo, el eyebrow dorado y las superficies glass muestran los colores esperados. Consola sin errores y peticiones solo locales. `pnpm lint` y `pnpm build` correctos.

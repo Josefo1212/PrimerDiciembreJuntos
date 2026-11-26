@@ -1,6 +1,6 @@
 # Spec 008 — Calendario nocturno
 
-Estado: **aprobada** el 26/11/2026.
+Estado: **implementada y validada en navegador** el 26/11/2026.
 
 ## Contexto y objetivo
 

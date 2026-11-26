@@ -610,6 +610,14 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T4 de validación en navegador y cierre de la Spec 008.
 
+## 2026-11-26 — Spec 008 validada en navegador y cerrada
+
+**Contexto:** el calendario ya había adoptado la gama nocturna en T1–T3; faltaba cerrar la validación completa.
+
+**Validación:** flujo real `2026` → bienvenida → calendario con fecha de prueba `2026-12-05`. A 390×844 no hay desbordamiento (`scrollWidth = 390`); a 1280×800 la cuadrícula usa 8 columnas sin desbordamiento. Bloqueado, Disponible y Visitado conservan etiqueta y símbolo, con colores computados coherentes con la portada. Consola sin errores y peticiones exclusivamente locales. `pnpm lint` y `pnpm build` correctos. Esta comprobación también confirma visualmente la luna de la Spec 007 en acceso y bienvenida.
+
+**Estado:** Spec 008 cerrada. Queda pendiente la vista de sorpresa, que aún usa la paleta clara anterior.
+
 ## Plantilla para próximas entradas
 
 ```markdown
