@@ -1,8 +1,9 @@
 @import './design-system/tokens.css';
 
 :root {
-  --font-heading: Georgia, 'Times New Roman', serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-handwritten: 'Caveat', 'Segoe Print', cursive;
 
   font-family: var(--font-body);
   font-synthesis: none;

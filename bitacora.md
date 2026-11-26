@@ -418,6 +418,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** contenido y formato de los 31 días; rutas `/memories` y `/finale`; código de acceso definitivo. La verificación en Vercel del deploy corregido queda registrada como correcta por el usuario, sin nueva ejecución local.
 
+## 2026-11-26 — Spec 005 aprobada y T1: fuentes locales
+
+**Contexto:** el usuario pidió mejorar visualmente el inicio. Confirmó que se rediseñaran acceso y bienvenida, con motivo de sobre y sello, e instalara las fuentes propuestas.
+
+**Decisión:** Spec 005 aprobada con cinco tareas. El acceso y la bienvenida compartirán un motivo de sobre cerrado/abierto. Las fuentes serán locales, sin CDN.
+
+**Implementación:** spec, plan y tareas de la Spec 005. Instalación de Fontsource e importación de subconjuntos latinos en `main.tsx`. `index.css` expone `--font-heading`, `--font-body` y `--font-handwritten` con pilas de respaldo.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos; `dist` incluye los archivos de fuente como assets locales.
+
+**Pendiente:** T2 a T5 de la Spec 005.
+
 ## Plantilla para próximas entradas
 
 ```markdown
