@@ -8,8 +8,9 @@
   - Hecho cuando: `getUnlockDate()` usa la fecha de prueba solo con `import.meta.env.DEV`; `CalendarView` y `SurpriseView` lo usan en lugar de `new Date()`; `ProgressProvider` conserva la fecha real; `pnpm lint` y `pnpm build` terminan correctamente.
   - **Resultado:** `src/shared/time/unlockDate.ts` centraliza la fecha de desbloqueo. `CalendarView` y `SurpriseView` lo consumen; `ProgressProvider` sigue usando `new Date()` con un comentario que lo protege. `pnpm lint` y `pnpm build` correctos; `dist` no contiene `previewDate` ni `getPreviewDate`.
 
-- [ ] **T3. Añadir el panel de fecha de prueba al calendario.** RF-1, RF-4, RF-5, RF-8.
+- [x] **T3. Añadir el panel de fecha de prueba al calendario.** RF-1, RF-4, RF-5, RF-8.
   - Hecho cuando: el panel aparece solo en desarrollo; aplicar una fecha actualiza las 31 tarjetas; «Usar fecha real» restaura el estado; la fecha sigue activa al navegar, recargar y volver; teclado, foco y estado anunciado verificados.
+  - **Resultado:** `DevDatePanel` con selector, «Aplicar fecha» y «Usar fecha real», conectado desde `CalendarView`. En navegador, sin fecha de prueba hay 31 bloqueados; con 5/12 hay 5 días desbloqueados y 26 bloqueados; el día 2 abre su sorpresa. Tras recargar una ruta y volver al calendario, la fecha sigue activa; al limpiarla vuelven 31 bloqueados y se borra `sessionStorage`. La primera pulsación de `Tab` entra al selector con foco visible; `role="status"` anuncia el estado. Sin errores en consola.
 
 - [ ] **T4. Validar la spec completa y cerrarla.** RF-2, RF-3, RF-7, RF-8.
   - Hecho cuando: en navegador se comprueban los estados con 5/12/2026, la visita guarda la fecha real, el panel no aparece en producción, `dist` no contiene los textos ni la clave de prueba, no hay peticiones XHR/fetch, y `spec.md`, `AGENTS.md` y `bitacora.md` quedan actualizados.

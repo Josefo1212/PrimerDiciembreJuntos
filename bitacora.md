@@ -394,6 +394,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T3 y T4 de la Spec 004.
 
+## 2026-11-26 — T3: panel de fecha de prueba
+
+**Contexto:** la fecha de prueba ya estaba disponible para las reglas, pero hacía falta una forma visible de aplicarla y quitarla durante el desarrollo.
+
+**Decisión:** el panel vive en `/calendar`, está condicionado a `import.meta.env.DEV` y usa `role="status"` para anunciar si hay una fecha activa. `CalendarView` fuerza un recálculo al aplicar o limpiar la fecha.
+
+**Implementación:** `DevDatePanel.tsx` y `DevDatePanel.module.css`, con selector de fecha, «Aplicar fecha» y «Usar fecha real». `CalendarView` renderiza el panel solo en desarrollo.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En Chrome DevTools: sin fecha de prueba hay 31 días bloqueados; al aplicar 5/12/2026 hay 5 desbloqueados y 26 bloqueados; el día 2 abre su sorpresa. Tras recargar `/surprise/2`, volver a entrar y abrir el calendario, la fecha sigue activa. «Usar fecha real» devuelve 31 bloqueados y borra la sesión. El primer `Tab` enfoca el selector con foco visible. No hay errores en consola.
+
+**Pendiente:** T4 de validación integral y cierre de la Spec 004.
+
 ## Plantilla para próximas entradas
 
 ```markdown

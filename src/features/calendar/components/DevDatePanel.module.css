@@ -1,0 +1,84 @@
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.5rem;
+  padding: 0.8rem 1rem;
+  border: 1px dashed var(--lavender);
+  border-radius: 16px;
+  background: var(--warm-ivory);
+}
+
+.label {
+  color: var(--deep-plum);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.input,
+.button,
+.secondaryButton {
+  min-height: 2.5rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.input {
+  padding: 0 0.75rem;
+  border: 1px solid var(--pastel-lilac);
+  background: var(--surface);
+  color: var(--deep-plum);
+}
+
+.button,
+.secondaryButton {
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.button {
+  border: 1px solid var(--dusty-violet);
+  background: var(--dusty-violet);
+  color: var(--surface);
+}
+
+.secondaryButton {
+  border: 1px solid var(--pastel-lilac);
+  background: transparent;
+  color: var(--dusty-violet);
+}
+
+.button:hover {
+  background: var(--deep-plum);
+}
+
+.secondaryButton:hover {
+  background: var(--soft-lilac);
+}
+
+.input:focus-visible,
+.button:focus-visible,
+.secondaryButton:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(128, 99, 158, 0.24);
+}
+
+.status {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--dusty-violet);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+@media (forced-colors: active) {
+  .input:focus-visible,
+  .button:focus-visible,
+  .secondaryButton:focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+}
