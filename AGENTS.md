@@ -17,7 +17,7 @@ No se usa subtítulo. El nombre no lleva sufijos de edición o variante.
 
 El proyecto está en etapa de definición y preparación. Los documentos de referencia de Civik se usaron únicamente como modelo de estructura, profundidad y disciplina documental; sus decisiones de backend, Rust, PostgreSQL, hexagonalidad, auditoría y despliegue no se trasladan a este proyecto.
 
-**Estado:** bootstrap ejecutado y Spec 001 de acceso implementada el 26/11/2026 (React 19 + TypeScript + Vite + pnpm), sin dependencias adicionales instaladas todavía. La validación en navegador de esa vista sigue pendiente. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados.
+**Estado:** bootstrap ejecutado y Spec 001 de acceso implementada el 26/11/2026 (React 19 + TypeScript + Vite + pnpm), sin dependencias adicionales instaladas todavía. La vista fue validada en navegador el 26/11/2026: teclado y foco, error anunciado, recarga, ausencia de peticiones, móvil y movimiento reducido. Tampoco asumir que las 31 sorpresas están escritas o que los recursos multimedia ya están organizados.
 
 ### Decisiones confirmadas
 

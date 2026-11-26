@@ -152,6 +152,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** nada de esta tarea. Sigue pendiente sustituir el código temporal `2026`.
 
+## 2026-11-26 — Spec 001 validada en navegador
+
+**Contexto:** la validación manual estaba pendiente porque no se había comprobado el comportamiento real en un navegador. Se usaron las herramientas de Chrome DevTools disponibles en la sesión.
+
+**Decisiones:** no se modifica el comportamiento. Se considera cerrada la T7 de la Spec 001 y se actualiza el estado de `AGENTS.md`.
+
+**Implementación:** sin cambios de código; actualización de `specs/001-acceso/tasks.md`, `AGENTS.md` y esta bitácora.
+
+**Validación:** `Tab` y `Shift+Tab` recorren campo y botón con foco visible; `1234 + Enter` muestra «Ese código no es correcto» con `role="alert"`; `2026 + Enter` muestra «Bienvenida, Isabela»; la recarga vuelve al acceso; no hay peticiones XHR/fetch; viewport móvil 390×844 y `prefers-reduced-motion: reduce` con transiciones de `0.16s` reducidas a `0.01ms`. `pnpm lint` y `pnpm build` correctos.
+
+**Pendiente:** sustituir el código temporal `2026` por el definitivo antes del despliegue; aprobar CSS Modules y React Router cuando se necesiten.
+
 ## Plantilla para próximas entradas
 
 ```markdown

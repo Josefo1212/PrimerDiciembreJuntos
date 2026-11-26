@@ -18,10 +18,9 @@
 - [x] **T6. Integrar ambas vistas en `App.tsx` con estado local `locked | unlocked`.** RF-1, RF-6, RF-10, RF-11.
   - Hecho cuando: al cargar aparece `AccessView`; con `2026` aparece `WelcomeView`; al recargar vuelve `AccessView`; no hay `fetch` ni almacenamiento.
 
-- [ ] **T7. Validar el conjunto con lint, build y comprobación manual.** Criterios de aceptación completos.
+- [x] **T7. Validar el conjunto con lint, build y comprobación en navegador.** Criterios de aceptación completos.
   - Hecho cuando: `pnpm lint` y `pnpm build` terminan correctamente y se han recorrido uno a uno los casos de aceptación, incluidos teclado, recarga, red, móvil/escritorio y `prefers-reduced-motion`.
-  - **Avance real:** `pnpm lint` y `pnpm build` terminaron correctamente; las reglas puras se compilaron y ejecutaron con los seis casos de aceptación en verde; no hay `fetch`, almacenamiento ni dependencias nuevas en `src/`.
-  - **Pendiente:** recorrido manual en navegador de foco/teclado, móvil/escritorio, `prefers-reduced-motion` y pestaña Network.
+  - **Validado:** reglas puras con seis casos en verde; `pnpm lint` y `pnpm build` correctos; sin `fetch`, almacenamiento ni dependencias nuevas. En Chrome DevTools: `Tab` al campo y al botón con halo visible, `Shift+Tab` de vuelta al campo, `1234 + Enter` muestra el error anunciado, `2026 + Enter` abre la bienvenida, recarga vuelve al acceso, sin peticiones XHR/fetch, viewport 390×844 y `prefers-reduced-motion: reduce` con transiciones reducidas.
 
 - [x] **T8. Documentar y aplicar las convenciones de código aprobadas.** Convenciones generales del proyecto.
   - Hecho cuando: existe `CONVENTIONS.md` con funciones flecha obligatorias, sintaxis moderna, estructura feature-based, hooks/reglas separados y commit por tarea; `AGENTS.md`, `constitution.md` y `SKILL.md` la referencian; el código existente cumple las reglas y cada tarea tiene su commit.
