@@ -490,6 +490,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T2 a T5 de la Spec 006.
 
+## 2026-11-26 — T2: escena nocturna compartida
+
+**Contexto:** acceso y bienvenida debían compartir exactamente el mismo lenguaje visual y la misma coreografía de entrada.
+
+**Decisión:** extraer una escena común (`CoverScene`) en lugar de duplicar CSS en dos vistas. El contenido cambia por props; la decoración y las animaciones viven en un solo módulo.
+
+**Implementación:** `CoverScene.tsx` y `CoverScene.module.css` con fondo nocturno, estrellas, halo, columna editorial y panel glass. Animaciones `sceneIn`, `rise`, `panelIn`, `twinkle` y `breathe`, con reglas para movimiento reducido y `forced-colors`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. La revisión visual queda para T4, cuando se conecten las vistas.
+
+**Pendiente:** T3 a T5 de la Spec 006.
+
 ## Plantilla para próximas entradas
 
 ```markdown
