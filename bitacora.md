@@ -312,6 +312,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T5 a T8 de la Spec 003.
 
+## 2026-11-26 — T5: calendario accesible
+
+**Contexto:** hacía falta la vista donde Isabela vea los 31 días y su estado.
+
+**Decisión:** cada tarjeta muestra el número y una etiqueta textual («Bloqueado», «Disponible» o «Visitado»); los días visitados añaden una marca ✓ oculta a lectores de pantalla. Los días bloqueados no son enlaces ni reciben foco. El aviso de almacenamiento no disponible aparece una sola vez en la vista.
+
+**Implementación:** `CalendarView.tsx`, `CalendarGrid.tsx`, `DayCard.tsx` y sus módulos CSS. Se añade la ruta `/calendar` sin guarda para poder validar la vista; la guarda se introduce en T6.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. En Chrome DevTools, `/calendar` muestra 31 tarjetas, 0 enlaces de día, 31 estados «BLOQUEADO» y el progreso «0 de 31 días visitados». La primera pulsación de `Tab` enfoca «Volver al inicio». La variante con días disponibles se comprobará en T6 con fecha simulada.
+
+**Pendiente:** T6 a T8 de la Spec 003.
+
 ## Plantilla para próximas entradas
 
 ```markdown

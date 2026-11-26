@@ -1,0 +1,79 @@
+.page {
+  min-height: 100svh;
+  display: grid;
+  place-items: start center;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(233, 202, 219, 0.45), transparent 42%),
+    radial-gradient(circle at 85% 90%, rgba(234, 224, 245, 0.6), transparent 45%),
+    var(--lavender-mist);
+}
+
+.content {
+  width: min(100%, 60rem);
+}
+
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--dusty-violet);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--deep-plum);
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 8vw, 3.2rem);
+  font-weight: 400;
+}
+
+.progress {
+  margin: 0.75rem 0 0;
+  color: var(--dusty-violet);
+  font-size: 0.95rem;
+}
+
+.storageWarning {
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--dusty-violet);
+  border-radius: 12px;
+  background: var(--warm-ivory);
+  color: var(--deep-plum);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.backLink {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  color: var(--dusty-violet);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  background: var(--soft-lilac);
+}
+
+.backLink:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(128, 99, 158, 0.22);
+}
+
+@media (forced-colors: active) {
+  .backLink:focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 3px;
+    box-shadow: none;
+  }
+}

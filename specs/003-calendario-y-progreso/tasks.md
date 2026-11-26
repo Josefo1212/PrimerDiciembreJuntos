@@ -16,8 +16,9 @@
   - Hecho cuando: `ProgressProvider` expone `visitedDayIds`, `storageStatus` y `markVisited`; carga al montar; si falla, mantiene visitas en memoria y no afirma que se guardó; `pnpm lint`, `pnpm build` y la comprobación en navegador terminan correctamente.
   - **Resultado:** `ProgressContext`, `useProgress` y `ProgressProvider` montados desde `App.tsx`. En Chrome DevTools se creó la base `primerDiciembreJuntos` sin errores de consola; la visita real y la degradación se comprueban en T7 y T8.
 
-- [ ] **T5. Construir el calendario accesible de 31 días.** RF-1, RF-11, RF-17.
+- [x] **T5. Construir el calendario accesible de 31 días.** RF-1, RF-11, RF-17.
   - Hecho cuando: `/calendar` muestra 31 tarjetas con número, estado por texto/forma/color y progreso «N de 31 días visitados»; navegación por teclado, foco visible y `prefers-reduced-motion` verificados; `pnpm lint` y `pnpm build` terminan correctamente.
+  - **Resultado:** `CalendarView`, `CalendarGrid` y `DayCard` con módulos CSS. Se registra `/calendar` en el router para poder validarlo; T6 añadirá la guarda. Con la fecha real (26/11) hay 31 tarjetas bloqueadas, sin enlaces en los días futuros y progreso «0 de 31 días visitados». `Tab` llega directamente a «Volver al inicio». Movimiento reducido se revisa en T8.
 
 - [ ] **T6. Añadir rutas protegidas y el enlace desde la bienvenida.** RF-9, RF-10.
   - Hecho cuando: `/calendar` y `/surprise/:dayId` están tras `RequireAccess`; sin acceso redirigen a `/`; con acceso válido la bienvenida ofrece «Abrir mi calendario» sin navegar automáticamente; `pnpm lint` y `pnpm build` terminan correctamente.
