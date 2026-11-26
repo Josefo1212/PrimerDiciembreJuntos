@@ -2,17 +2,22 @@
   display: grid;
   place-items: center;
   min-height: 5.75rem;
-  border: 1px solid var(--pastel-lilac);
+  border: 1px solid rgba(205, 181, 232, 0.42);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 8px 20px rgba(81, 64, 100, 0.07);
+  background: rgba(46, 34, 64, 0.66);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 12px 28px rgba(8, 5, 14, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  color: var(--warm-ivory);
   text-align: center;
 }
 
 .locked {
   border-style: dashed;
-  background: rgba(248, 245, 252, 0.8);
-  color: var(--lavender);
+  border-color: rgba(205, 181, 232, 0.32);
+  background: rgba(31, 23, 43, 0.52);
+  color: rgba(205, 181, 232, 0.72);
 }
 
 .available {
@@ -20,8 +25,8 @@
 }
 
 .visited {
-  border-color: var(--dusty-violet);
-  background: var(--soft-lilac);
+  border-color: var(--gold-light);
+  background: linear-gradient(150deg, rgba(46, 34, 64, 0.78), rgba(128, 99, 158, 0.32));
 }
 
 .link {
@@ -37,26 +42,42 @@
 
 .link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(81, 64, 100, 0.14);
+  box-shadow:
+    0 16px 30px rgba(8, 5, 14, 0.35),
+    inset 0 0 0 1px rgba(228, 199, 131, 0.2);
 }
 
 .link:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(128, 99, 158, 0.22);
+  box-shadow: 0 0 0 4px rgba(228, 199, 131, 0.38);
 }
 
 .number {
-  color: var(--deep-plum);
+  color: var(--warm-ivory);
   font-family: var(--font-heading);
   font-size: clamp(1.6rem, 6vw, 2.1rem);
   line-height: 1;
 }
 
+.locked .number {
+  color: rgba(205, 181, 232, 0.82);
+}
+
 .status {
   margin-top: 0.45rem;
+  color: rgba(233, 202, 219, 0.8);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.available .status,
+.visited .status {
+  color: var(--gold-light);
+}
+
+.locked .status {
+  color: rgba(205, 181, 232, 0.76);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -70,6 +91,21 @@
 }
 
 @media (forced-colors: active) {
+  .card {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    backdrop-filter: none;
+  }
+
+  .number,
+  .status,
+  .locked .number,
+  .locked .status,
+  .available .status,
+  .visited .status {
+    color: CanvasText;
+  }
+
   .link:focus-visible {
     outline: 2px solid CanvasText;
     outline-offset: 3px;

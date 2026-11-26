@@ -586,6 +586,18 @@ El bootstrap de Vite se ejecutó en la carpeta existente con `pnpm create vite .
 
 **Pendiente:** T2 a T4 de la Spec 008.
 
+## 2026-11-26 — T2: tarjetas nocturnas del calendario
+
+**Contexto:** había que trasladar la gama de la portada a los 31 días sin perder el sistema de estados.
+
+**Decisión:** conservar `Bloqueado`, `Disponible`, `Visitado` y el `✓`; usar borde, relleno y texto para reforzar cada estado, nunca solo color.
+
+**Implementación:** `DayCard.module.css` pasa a superficie glass plum/lila, con bloqueado apagado, disponible en Lavender y visitado con Gold Light. Foco dorado y reglas de movimiento reducido y `forced-colors`.
+
+**Validación:** `pnpm lint` y `pnpm build` correctos. Queda pendiente la comprobación visual de los estados reales en T4.
+
+**Pendiente:** T3 y T4 de la Spec 008.
+
 ## Plantilla para próximas entradas
 
 ```markdown
